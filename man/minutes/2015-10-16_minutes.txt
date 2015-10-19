@@ -1,0 +1,55 @@
+Project: Group Project 02
+Meeting: Weekly project meeting 
+Persons present: All group members were present
+Place and date of meeting: C55, Friday 16th October 2015
+Circulation list: All project members, project manager
+Auther: Tom Oram
+Date of minutes: 18th Ocotber
+Version 2.0
+
+Matters arising
+===============
+  
+1. Luke is our project leader  
+2. Josh is deputy leader  
+3. Tom Oram - QA (quality assurance)  
+4. Tino and Tom2 - Deputy QA  
+  
+ACTION: luj9   
+5. Luke needs to make an agenda for next weeks meeting  
+6. Generally organise the group and ensure everyone knows what they are doing  
+7. Present the progress of everyone next week  
+** NOTE ** - We must send Luke with evidence our progress of what we have done this week else Luke cannot prove we have been working  
+  
+Notes from presentations
+======================== 
+  
+Micheal's presentation (Quality assurance)  
+  
+- The format of the quality assurance has a strict set of specifications we must follow when writing it up  
+- It is a translation of the clients requirements into the design specification  
+- The first main part is the introduction, again, this has strict guidelines to follow when writing this  
+- The second part is the referencing, i would recommend following a uniform format for this  
+- The next stage specified is the deployment stage  
+- The next stage is the description, this includes the architecture of the system, the applications inside the system, including some UML diagrams which show the outcome at the end of each process  
+- Using more UML diagrams to describe the applications mentioned above into interactions  
+(How the interact with one another)  
+- We need to include use case diagram and also use case UMLs aswell  
+- We also need to specify the user interface, the use of pictures would be good for this - Component description is also needed, only include aspects with major significance in this such as major classes or interfaces (Display this like the class diagrams last year in java) - Finally the detailed design is needed, this involves aspects that may be complex such as an algorithm that needs identifying and explaining aswell as other aspects that have not been included yet, again displayed in UML or even pseudo code  
+  
+  
+Luke - Project plan  
+  
+- This document specifies the layout and content and also contains tasks we need to complete in order for the project to meet client specifications  
+- The project plan allows us to keep on track with work and also monitor our progress - The first topic is the introduction, defines the purpose, scope and objectives of the project plan  
+- We need to include a gantt which includes everything, whats tasks we did and how long it took us (only includes major tasks)  
+- Risk analysis is the next stage, this involves focusing on potential threats or disasters to the projects and how we can prevent them from happening or cope with them if they occur ** NOTE ** This is the one due in two weeks!!!  
+  
+Finally Tom2 - QA on testing  
+  
+- Module testing, this is done by the programmer and only tests specific aspects of the work such as HTTP requests and how the server deals with it  
+- System testing, this is when we test the entire system, it is tested by somebody outside of our group  
+- Acceptance - This is when the system has been accepted and tested in isolation and has not been put into actual use yet  
+- The QA defines the procedures we must do and how we must go about doing it, specific procedures, we portray this in a similar fashion to the testing table in our java assignments    
+  
+  
