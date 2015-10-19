@@ -13,7 +13,7 @@ Matters arising
 1. Luke is our project leader  
 2. Josh is deputy leader  
 3. Tom Oram - QA (quality assurance)  
-4. Tino and Tom2 - Deputy QA  
+4. Tino and Tom Mills - Deputy QA  
   
 ACTION: luj9   
 5. Luke needs to make an agenda for next weeks meeting  
@@ -45,7 +45,7 @@ Luke - Project plan
 - We need to include a gantt which includes everything, whats tasks we did and how long it took us (only includes major tasks)  
 - Risk analysis is the next stage, this involves focusing on potential threats or disasters to the projects and how we can prevent them from happening or cope with them if they occur ** NOTE ** This is the one due in two weeks!!!  
   
-Finally Tom2 - QA on testing  
+Finally Tom Mills - QA on testing  
   
 - Module testing, this is done by the programmer and only tests specific aspects of the work such as HTTP requests and how the server deals with it  
 - System testing, this is when we test the entire system, it is tested by somebody outside of our group  
