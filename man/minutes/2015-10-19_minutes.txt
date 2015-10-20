@@ -7,18 +7,18 @@ Author: Tom Oram
 Date of minutes: 19th October
 Version 3.0
 
-Matters asrising
+Matters arising
 ================
 1. Tino gave us his proposed system and we discussed it, giving our views and what we thought
 2. Remaining presentations were given
 
 Action: luj9
 3. Luke needs to email nigel about what we need to put into our group gitHub and also ask if there are flare marks awarded
-4. Luke needs to also look into booking a room for our future meetings
+4. Luke needs to also look into booking a room for our future meetings and organise the PhP subgroup
 5. Luke needs to make documents both for diciplinary and incentives and the resulting outcome if someone meets either criteria
 
 Action: mwg2
-6. Michal is going to organise the sub groups for future meetings, this involves the PhP, Java and Databases sub groups 
+6. Michal is going to organise the sub groups for future meetings, this involves the Java and Databases sub groups 
 
 Action: adn2
 7. Adam needs to make a prototype of the interface of our database
