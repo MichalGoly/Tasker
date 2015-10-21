@@ -14,19 +14,19 @@ Matters arising
 3. Provisional subteams were decided. The TaskerSRV subteam will compose of Will, Tino, Michal & Tom Mills. The TaskerMAN subteam will compose of Will, Tino & Luke. The TaskerCLI subteam will compose of Josh, Adam, Michal and Tom Mills.
 
 Action: luj9
-3. Luke needs to email Nigel about what we need to put into our group gitHub and also ask if there are flair marks awarded
-4. Luke needs to also look into booking a room for our future meetings and organise the PhP subgroup
-5. Luke needs to make documents both for diciplinary and incentives and the resulting outcome if someone meets either criteria
+4. Luke needs to email Nigel about what we need to put into our group gitHub and also ask if there are flair marks awarded
+5. Luke needs to also look into booking a room for our future meetings and organise the PhP subgroup
+6. Luke needs to make documents both for diciplinary and incentives and the resulting outcome if someone meets either criteria
 
 Action: mwg2
-6. Michal is going to organise the sub groups for future meetings, this involves the Java and Databases sub groups 
+7. Michal is going to organise the sub groups for future meetings, this involves the Java and Databases sub groups 
 
 Action: adn2
-7. Adam needs to make a prototype of the interface of our database
-8. Adam needs to complete documents 5.1 and 5.2
+8. Adam needs to make a prototype of the interface of our database
+9. Adam needs to complete documents 5.1 and 5.2
 
 Action: tig, mwg2
-9. Tino and Michal needs to complete documents 4.1, 4.2
+10. Tino and Michal needs to complete documents 4.1, 4.2
 
 Action: tho4
-10. Tom Oram needs to complete all other document for the first hand-in and also check everyone elses submitted work is correct
+11. Tom Oram needs to complete all other document for the first hand-in and also check everyone elses submitted work is correct
