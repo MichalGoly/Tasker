@@ -1,0 +1,47 @@
+Project: Group project 04 Meeting: Weekly Project Meeting
+Persons present: All project members were present
+Place and date of Meeting: C55, Friday 23rd October 2015
+Circulation list: All project members, project manager
+Author: Tino Joseph Garapasi
+Date of minutes: 23rd October
+Version 1.0
+
+Matters arising
+===============
+
+Chris Loftus said today, 23rd of October is the official beginning of the Group Project.
+
+
+ACTION: Tom Oram
+1.a).  Chris Loftus reminded the QA manager that the minutes have to conform to the specified standard and that he will start making a periodical audit of the minutes.
+b). Tom to complete the introduction and bibliography section of Friday deliverables.
+c). Tom to be in charge of risk analysis.
+
+ACTION: Michal
+2). Michal 4.1 Applications in the system deliverable handover.
+
+ACTION: Tino
+3). Tino 4.2 Application interactions deliverable handover.
+
+ACTION: Adam
+4). 5.1 use-case deliverable handover.
+
+ACTION: Will
+5). a). 5.2 user interface design deliverable handover.
+b). To begin going through section 5.1 and 5.2 of Testing specification in collaboration with Tom Mills.
+
+ACTION: Tom Mills
+6). a). To begin going through section 5.1 and 5.2 of Testing specification in collaboration with Will.
+
+Java sub group gave a report on what they have done. Michal suggested to sub divide the Java group further into GUI & underlying services. 
+
+ACTION: Josh
+7).a). Joshua to double check on standard specifications.
+b). Joshua to setup an online spreadsheet.
+
+ACTION: Luke 
+8).a). Luke to update the Gantt Chart.
+b). Luke to update everyone on the meeting location.
+
+ACTION: EVERYONE
+10). Chris told us to reference the requirements on each and every deliverable so as not to veer off course.
