@@ -54,11 +54,11 @@ operate both on-line and off-line. Therefore it will have a direct access to
 a local storage provided by the SQLite database.
 \subsection{Applications interface}
 Unlike the deployment diagram above, the component diagram below depicts the interaction of different modules or components of the proposed system. There are four major components that form the entire system. Only a black box view is shown here. This means that the components are not further decomposed to reveal the inner components. The opposite of this is a white box view which shows not only the major component but also the inner components that form the big picture.  
-According to the design specification standard, only the simple black box view application interaction is relevant for now. A rundown of the actual interactions is as follows: \\
+According to the design specification standard[1], only the simple black box view application interaction is relevant for now. A rundown of the actual interactions is as follows: \\
 \includegraphics[width=\textwidth]{images/4.2/ApplicationsInterface} 
 TaskerSRV - This component, representing the database, consists of one provided interface (solid circle) and two required interfaces (cup shaped). These are:
 \begin{itemize}
-	\item SQL(provided interface) : provides an SQL interface, making it possible for the web application, TaskerMAN, to manipulate the database and carry the necessary operations outlined in the requirements such as adding, editing, deleting users or tasks. 
+	\item SQL(provided interface) : provides an SQL interface, making it possible for the web application, TaskerMAN, to manipulate the database and carry the necessary operations outlined in the requirements[2] such as adding, editing, deleting users or tasks. 
 	\item HTTP (required interface): Without the HTTP protocol the database would not be accessed by the taskerMAN and no operation can take place.
 	\item JDBC (required interface): the interface is required so that communication to the SQL can be established and give the required services to the client.
 \end{itemize}
@@ -71,7 +71,7 @@ TaskerCLI - This component representing the client has one provided interface (
 \subsection{Use-cases}
 \textbf{TaskerMAN use-case} \\
 \includegraphics[width=\textwidth]{images/5.1/TaskerMANUseCase}
-The TaskerMAN use case diagram above depicts clearly how the web administration application will be able to be used by the administrator.  The necessary functions depicted in the specification requirements are clearly accessible to the administrator after logging into the system. These functionalities are, add task, edit task, view tasks, filer display, add and edit member. The options update member and delete members as well as update task and delete task are labelled as extending.  This is because they are options and an administrator may or may not choose to delete a task or member.  Also they include a verification so that the administrator might be aware, for example, that a member to be deleted or updated might be currently assigned a task or vice versa.  Similarly the filter display is extended since an administrator may choose to filter display results or not.
+The TaskerMAN use case diagram above depicts clearly how the web administration application will be able to be used by the administrator.  The necessary functions depicted in the specification requirements[2], are clearly accessible to the administrator after logging into the system. These functionalities are, add task, edit task, view tasks, filter display, add and edit member. The options update member and delete members as well as update task and delete task are labelled as extending.  This is because they are options and an administrator may or may not choose to delete a task or member.  Also they include a verification so that the administrator might be aware, for example, that a member to be deleted or updated might be currently assigned a task or vice versa.  Similarly the filter display is extended since an administrator may choose to filter display results or not.
 Example Usage Scenario:
 \begin{enumerate}
 	\item The administrator logs onto the web application system.
@@ -81,7 +81,7 @@ Example Usage Scenario:
 	\item Administrator then clicks on "add task" and a necessary form is displayed where data is entered.
 	\item Administrator decides that the task was allocated to the wrong member.  He or she clicks on "edit task".  An appropriate page is loaded where the task can be selected and a reallocation can be carried out.
 	\item Administrator decides that one more task is actually not needed.  He or she clicks on "edit task", selects the task and clicks on "delete task".  A prompt is displayed informing that the task is associated with a member.  If the administrator is comfortable to delete, then the action is executed.
-	\item Administrator clicks on "view tasks" and all the tasks displayed.  An option is also available for the administrator to filter display results accordingly as specified in the requirements.
+	\item Administrator clicks on "view tasks" and all the tasks displayed.  An option is also available for the administrator to filter display results accordingly as specified in the requirements[8].
 	\item The administrator has finished using the system and he or she clicks on "log out" and the session ends.
 \end{enumerate} 
 \textbf{TaskerCLI use-case}
