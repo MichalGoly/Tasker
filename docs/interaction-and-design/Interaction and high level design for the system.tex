@@ -8,9 +8,9 @@
 \subtitle{Interaction and high level design for the system}
 \author{L. Jones, T. Oram, T. Garapasi, M. Goly, W. Jones, A. Neaves, J. Mir, T. MIlls}     
 \shorttitle{Interaction and high level design for the system}
-\version{1.0}
+\version{1.1}
 \status{Review}
-\date{2015-10-27}
+\date{2015-10-28}
 \configref{SE-12-DS}
 \maketitle
 \tableofcontents
@@ -116,13 +116,13 @@ The login screen, the first screen to appear when the client loads. TaskerCLI do
 The synchronisation screen occurs between the login and main client page. As per the requirements specifications \cite{se.qa.rs fr11} this screen will also occur before and after local editing if network access is available, as well as occurring every 5 minutes by default should no local editing take place. This will display the relevant information from the database as it's downloading the data. Ideally this will be a fast enough task that this screen should be seen for as little time as possible. \\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerCLIMainScreen} \\
-The 'Main Screen' of TaskerCLI. It shows a list of tasks assigned to the person who signed in, as well as options for sorting and searching through the list. Clicking on the 'Log Out' button will re-direct the user back to the login authentication screen. Double clicking a task's panel, or selecting a task and clicking the 'open task' button shows more detail about the task \cite{se.qa.rs fr10}, as well as the editable parts, such as the completed/allocated attribute and the sub-task list. In this example we'll double-click on the "Build Database" task. \\~\\
+The 'Main Screen' of TaskerCLI. It shows a list of tasks assigned to the person who signed in, as well as options for sorting and searching through the list. Clicking on the 'Log Out' button will re-direct the user back to the login authentication screen. Double clicking a task's panel, or selecting a task and clicking the 'open task' button shows more detail about the task \cite{se.qa.rs fr10}, as well as the editable parts, such as the completed/allocated attribute and the sub-task list comments. In this example we'll double-click on the "Build Database" task. \\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerCLITaskInfo} \\
-This screen shows more detail about the "Build Database". It displays all the task's information and allows the user to edit the parts specified \cite{se.qa.rs fr10}. \\~\\
+This screen shows more details about the "Build Database". It displays all the task's information and allows the user to edit task step comments and change task's status \cite{se.qa.rs fr10}. \\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerCLITaskUpdated} \\
-In this image we've changed the status to 'Completed' and removed a task from the sub-task list. We can press the 'Return to List' button to return to the 'Main Screen'. Doing so will prompt the synchronisation screen to appear and an attempt will be made to connect to the network and update the information on the database. If unsuccessful the user will still be re-directed back to the 'Main Screen', however the client will be operating locally until a connection can be established.\\~\\
+In this image we've changed the status to 'Completed'. We can press the 'Return to List' button to return to the 'Main Screen'. Doing so will prompt the synchronisation screen to appear and an attempt will be made to connect to the network and update the information on the remote MySQL database. If unsuccessful the user will still be re-directed back to the 'Main Screen', however the client will be now operating locally using the local SQLite database until a connection with the MySQL can be re-established.\\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerCLIMainScreenUpdated} \\
 Note the changes made are now reflected in this list. Also note that the task named 'Clean Kitchen' has disappeared. This is something that could happen if said task were marked 'Abandoned' via TaskerMAN while the user was editing a task within TaskerCLI, provided there is a network connection. \\~\\
@@ -178,6 +178,8 @@ N. W. Hardy, SE.QA.RS, IR1. 1.1 Release.
 Version & CCF No. & Date & Changes made to Document & Changed by \\
 \hline
 1.0 & N/A & 2015-10-27 & Initial creation for review & L. Jones \\
+\hline
+1.1 & N/A & 2015-10-28 & Updated the TaskerCLI user interface section & M. Goly \\
 \hline
 \end{tabular}
 \label{thelastpage}
