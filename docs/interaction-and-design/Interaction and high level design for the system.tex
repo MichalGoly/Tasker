@@ -53,19 +53,19 @@ Environment. Following the requirements specification\cite{se.qa.rs fr8 local st
 operate both on-line and off-line. Therefore it will have a direct access to 
 a local storage provided by the SQLite database.
 \subsection{Applications interface}
-Unlike the deployment diagram above, the component diagram below depicts the interaction of different modules or components of the proposed system. There are four major components that form the entire system. Only a black view box is shown here. This means that the components are not further decomposed to reveal the inner components. The opposite of this is a white box view which shows not only the major component but also the inner components that form the big picture.  
-According to the Design specification standard, only the simple black box view application interaction is relevant for now. A rundown of the actual interactions is as follows: \\
+Unlike the deployment diagram above, the component diagram below depicts the interaction of different modules or components of the proposed system. There are four major components that form the entire system. Only a black box view is shown here. This means that the components are not further decomposed to reveal the inner components. The opposite of this is a white box view which shows not only the major component but also the inner components that form the big picture.Â  
+According to the design specification standard, only the simple black box view application interaction is relevant for now. A rundown of the actual interactions is as follows: \\
 \includegraphics[width=\textwidth]{images/4.2/ApplicationsInterface} 
-TaskerSRV - This component, representing the database, consists of 1 provided interface (solid circle) and 2 required interfaces (cup shaped). These are:
+TaskerSRV - This component, representing the database, consists of one provided interface (solid circle) and two required interfaces (cup shaped). These are:
 \begin{itemize}
-	\item SQL(provided interface) : provides an sql interface, making it possible for the web application, TaskerMAN, to manipulate the database and carry the necessary operations outlined in the requirements such as adding, editing, deleting users or tasks. 
-	\item HTTP (required interface): Without the HTTP protocol the database would not be accessed by the taskMAN and no operation can take place.
-	\item JDBC (required interface): the interface is required so that communication with the sql can be established and give the required services to the client.
+	\item SQL(provided interface) : provides an SQL interface, making it possible for the web application, TaskerMAN, to manipulate the database and carry the necessary operations outlined in the requirements such as adding, editing, deleting users or tasks. 
+	\item HTTP (required interface): Without the HTTP protocol the database would not be accessed by the taskerMAN and no operation can take place.
+	\item JDBC (required interface): the interface is required so that communication to the SQL can be established and give the required services to the client.
 \end{itemize}
-TaskerMAN - This component, representing the web application has 1 required interface (SQL) and 1 provided interface (HTTP). Without SQL provided by TaskerSRV, TaskerMAN will not be able to do anything.  It will remain a useless dummy.  Also if it can't provide the HTTP communication interface then it wouldn't be able to access the database. \\
+TaskerMAN - This component, representing the web application has one required interface (SQL) and one provided interface (HTTP). Without SQL provided by TaskerSRV, TaskerMAN will not be able to do anything. It will remain a useless dummy. Also if it can not provide the HTTP communication interface then it would not be able to access the database. \\
 \newline 
-TaskerCLI - This component representing the client has 1 provided interface (JDBC).  Since its using java to connect to the database, taskerSRV as well as SQLite will require that the interface JDBC be implemented on the client or else there will be no database service. \\
-\newline SQLite - This component representing the local database on the client has 1 required interface (JDBC) which makes it possible for the client to connect to it.
+TaskerCLI -Â This component representing the client has one provided interface (JDBC).Â  Since its using java to connect to the database, taskerSRV as well as SQLite will require that the interface JDBC be implemented on the clientÂ or else there will be no database connection. \\
+\newline SQLite - This component representing the local database on the client has one required interface (JDBC) which makes it possible for the client to connect to it.
 \clearpage
 \section{INTERACTION DESIGN}
 \subsection{Use-cases}
@@ -75,14 +75,14 @@ The TaskerMAN use case diagram above depicts clearly how the web administration 
 Example Usage Scenario:
 \begin{enumerate}
 	\item The administrator logs onto the web application system.
-	\item Selects add member and registers the members.
-	\item Administrator clicks on view members to make sure the members are added.
-	\item Administrator realises that a member name was misspelled. He or she clicks on edit member and selects the option update member.  Necessary updates are done.
-	\item Administrator then clicks on add task and a necessary form is displayed where data is entered.
-	\item Administrator decides that the task was allocated to the wrong member.  He or she clicks on edit task.  An appropriate page is loaded where the task can be selected and a reallocation can be carried out.
-	\item Administrator decides that one more task is actually not needed.  He or she clicks on edit task, selects the task and clicks on delete task.  A prompt is displayed informing that the task is associated with a member.  If the administrator is comfortable to delete, then the action is executed.
-	\item Administrator clicks on view tasks and all the tasks displayed.  An option is also available for the administrator to filter display results accordingly as specified in the requirements.
-	\item The administrator has finished using the system and he or she clicks on log out and the session ends.
+	\item Selects "add member" and registers the members.
+	\item Administrator clicks on "view members" to make sure the members are added.
+	\item Administrator realises that a member name was misspelled. He or she clicks on "edit member" and selects the option "update member".  Necessary updates are done.
+	\item Administrator then clicks on "add task" and a necessary form is displayed where data is entered.
+	\item Administrator decides that the task was allocated to the wrong member.  He or she clicks on "edit task".  An appropriate page is loaded where the task can be selected and a reallocation can be carried out.
+	\item Administrator decides that one more task is actually not needed.  He or she clicks on "edit task", selects the task and clicks on "delete task".  A prompt is displayed informing that the task is associated with a member.  If the administrator is comfortable to delete, then the action is executed.
+	\item Administrator clicks on "view tasks" and all the tasks displayed.  An option is also available for the administrator to filter display results accordingly as specified in the requirements.
+	\item The administrator has finished using the system and he or she clicks on "log out" and the session ends.
 \end{enumerate} 
 \textbf{TaskerCLI use-case}
 
