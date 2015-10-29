@@ -8,9 +8,9 @@
 \subtitle{Interaction and high level design for the system}
 \author{L. Jones, T. Oram, T. Garapasi, M. Goly, W. Jones, A. Neaves, J. Mir, T. MIlls}     
 \shorttitle{Interaction and high level design for the system}
-\version{1.2}
+\version{1.3}
 \status{Review}
-\date{2015-10-28}
+\date{2015-10-29}
 \configref{SE-12-DS}
 \maketitle
 \tableofcontents
@@ -85,7 +85,7 @@ Example usage scenario:
 \end{enumerate}
 \subsubsection{TaskerCLI Use-Case}
 \includegraphics[width=\textwidth]{images/5.1/TaskerCLIUseCase}
-The TaskerCLI use-case diagram above depicts how TaskerCLI will be used by "actors".  The diagram illustrates the different functions the application must contain as outlined in the requirements specification \cite{se.qa.rs}. These are user identification (login), local storage of tasks, task synchronisation and the function to edit tasks, both locally and to TaskerSRV. Example Usage scenario:
+The TaskerCLI use-case diagram above depicts how TaskerCLI will be used by "actors".  The diagram illustrates the different functions the application must contain as outlined in the requirements specification \cite{se.qa.rs}. These are user identification (login), local storage of tasks, task synchronisation and the function to edit tasks, both locally and to TaskerSRV. Example usage scenario:
 \begin{enumerate}
 	\item The actor logs onto the Java application.
 	\item The application synchronises with TaskerSRV and pulls the tasks assigned to the actor and stores them to the SQLite database.
@@ -183,7 +183,9 @@ Version & CCF No. & Date & Changes made to Document & Changed by \\
 \hline
 1.1 & N/A & 2015-10-28 & Updated the TaskerCLI user interface section & M. Goly \\
 \hline
-1.2 & N/A & 2015-10-28 & Created sub-subsections for  Use-cases and User-inerface design subsections, updated TaskerMAN Task Portal image and information, minor grammatical revision document-wide & L. Jones \\
+1.2 & N/A & 2015-10-28 & Created sub-subsections for  Use-cases and User-interface design & L. Jones \\
+\hline
+1.3 & N/A & 2015-10-29 & Added TaskerCLI Use-Case diagram and narrative & L. Jones \\
 \hline
 \end{tabular}
 \label{thelastpage}
