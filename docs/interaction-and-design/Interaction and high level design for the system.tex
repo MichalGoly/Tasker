@@ -8,7 +8,7 @@
 \subtitle{Interaction and high level design for the system}
 \author{L. Jones, T. Oram, T. Garapasi, M. Goly, W. Jones, A. Neaves, J. Mir, T. MIlls}     
 \shorttitle{Interaction and high level design for the system}
-\version{1.1}
+\version{1.2}
 \status{Review}
 \date{2015-10-28}
 \configref{SE-12-DS}
@@ -53,23 +53,23 @@ Environment. Following the requirements specification\cite{se.qa.rs fr8 local st
 operate both on-line and off-line. Therefore it will have a direct access to 
 a local storage provided by the SQLite database.
 \subsection{Applications interface}
-Unlike the deployment diagram above, the component diagram below depicts the interaction of different modules or components of the proposed system. There are four major components that form the entire system. Only a black box view is shown here. This means that the components are not further decomposed to reveal the inner components. The opposite of this is a white box view which shows not only the major component but also the inner components that form the big picture.  
+Unlike the deployment diagram above, the component diagram below depicts the interaction of different modules or components of the proposed system. There are four major components that form the entire system. Only a black box view is shown here. This means that the components are not further decomposed to reveal the inner components. The opposite of this is a white box view which shows not only the major component but also the inner components that form the big picture. 
 According to the design specification standard[1], only the simple black box view application interaction is relevant for now. A rundown of the actual interactions is as follows: \\
 \includegraphics[width=\textwidth]{images/4.2/ApplicationsInterface} 
 TaskerSRV - This component, representing the database, consists of one provided interface (solid circle) and two required interfaces (cup shaped). These are:
 \begin{itemize}
-	\item SQL(provided interface) : provides an SQL interface, making it possible for the web application, TaskerMAN, to manipulate the database and carry the necessary operations outlined in the requirements[2] such as adding, editing, deleting users or tasks. 
-	\item HTTP (required interface): Without the HTTP protocol the database would not be accessed by the taskerMAN and no operation can take place.
-	\item JDBC (required interface): the interface is required so that communication to the SQL can be established and give the required services to the client.
+	\item SQL(provided interface) : Provides an SQL interface, making it possible for the web application, TaskerMAN, to manipulate the database and carry the necessary operations outlined in the requirements[2] such as adding, editing, deleting users or tasks. 
+	\item HTTP (required interface): Without the HTTP protocol the database would not be accessed by the TaskerMAN and no operation can take place.
+	\item JDBC (required interface): The interface is required so that communication to the SQL can be established and give the required services to the client.
 \end{itemize}
 TaskerMAN - This component, representing the web application has one required interface (SQL) and one provided interface (HTTP). Without SQL provided by TaskerSRV, TaskerMAN will not be able to do anything. It will remain a useless dummy. Also if it can not provide the HTTP communication interface then it would not be able to access the database. \\
 \newline 
-TaskerCLI - This component representing the client has one provided interface (JDBC).  Since its using java to connect to the database, taskerSRV as well as SQLite will require that the interface JDBC be implemented on the client or else there will be no database connection. \\
+TaskerCLI - This component representing the client has one provided interface (JDBC). Since it is using Java to connect to the database, TaskerSRV as well as SQLite will require that the interface JDBC be implemented on the client�or else there will be no database connection. \\
 \newline SQLite - This component representing the local database on the client has one required interface (JDBC) which makes it possible for the client to connect to it.
 \clearpage
 \section{INTERACTION DESIGN}
 \subsection{Use-cases}
-\textbf{TaskerMAN use-case} \\
+\subsubsection{TaskerMAN Use-Case}
 \includegraphics[width=\textwidth]{images/5.1/TaskerMANUseCase}
 The TaskerMAN use case diagram above depicts clearly how the web administration application will be able to be used by the administrator.  The necessary functions depicted in the specification requirements[2], are clearly accessible to the administrator after logging into the system. These functionalities are, add task, edit task, view tasks, filter display, add and edit member. The options update member and delete members as well as update task and delete task are labelled as extending.  This is because they are options and an administrator may or may not choose to delete a task or member.  Also they include a verification so that the administrator might be aware, for example, that a member to be deleted or updated might be currently assigned a task or vice versa.  Similarly the filter display is extended since an administrator may choose to filter display results or not.
 Example Usage Scenario:
@@ -84,31 +84,29 @@ Example Usage Scenario:
 	\item Administrator clicks on "view tasks" and all the tasks displayed.  An option is also available for the administrator to filter display results accordingly as specified in the requirements[8].
 	\item The administrator has finished using the system and he or she clicks on "log out" and the session ends.
 \end{enumerate} 
-\textbf{TaskerCLI use-case}
+\subsubsection{TaskerCLI Use-Case}
 
 *insert image here* 
 
 \subsection{User Interface design}
-\textbf{TaskerMAN Interface Design} \\
-\newline
+\subsubsection{TaskerMAN Interface Design} 
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANHomePage} \\
-This is the home page of the web interface, it's very easy to use and presents you with six options which provides very quick access to all aspects of the Tasker. To begin we'll click on the 'Add User' button. This will re-direct us to the 'Add Team Member' page. \\~\\
+This is the home page of the web interface, it is very easy to use and presents you with six options which provides very quick access to all aspects of the Tasker. To begin we will click on the 'Add User' button. This will re-direct us to the 'Add Team Member' page. \\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANAddUser} \\
-Here within the 'Add Team Member' page you will be presented with the form above which then enables you to create a user by presenting their name and email. Upon pressing the 'Add member' button the new member will be added to the database as required \cite{se.qa.rs fr3}. Clicking on the 'backwards arrow' in the top-left corner allows users to return to the home page. In fact the 'backwards arrow' exists within all of the site's internal pages and serves the same function of returning to the home page. \\~\\
+Here within the 'Add Team Member' page you will be presented with the form above which then enables you to create a user by presenting their name and e-mail. Upon pressing the 'Add member' button the new member will be added to the database as required \cite{se.qa.rs fr3}. Clicking on the 'backwards arrow' in the top-left corner allows users to return to the home page. In fact the 'backwards arrow' exists within all of the sites internal pages and serves the same function of returning to the home page. \\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANEditUser} \\
-To update or delete user data as required \cite{se.qa.rs fr3} click on the 'Edit User' button from the home page and you'll be presented with this page, displaying users' names, e-mail addresses and options to update/delete, clicking 'update' re-directs to a page with the same interface as the 'Add Team Member' page where name and e-mail can be updated, clicking 'delete' will prompt the user to verify with a 'confirm'/'cancel' option that they are sure they want to proceed, before re-directing them to a page confirming their deletion and a delete command will be submitted to the database to remove the user from the database. \\~\\
+To update or delete user data as required \cite{se.qa.rs fr3} click on the 'Edit User' button from the home page and you will be presented with this page, displaying users' names, e-mail addresses and options to update/delete, clicking 'update' re-directs to a page with the same interface as the 'Add Team Member' page where name and e-mail can be updated, clicking 'delete' will prompt the user to verify with a 'confirm'/'cancel' option that they are sure they want to proceed, before re-directing them to a page confirming their deletion and a delete command will be submitted to the database to remove the user from the database. \\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANAddTask} \\
-Clicking 'Add Task' from the home page will re-direct to the task portal, This is where people can make tasks which will then be submitted to specific users \cite{se.qa.rs fr4}. This task portal layout will also be used when updating tasks. 'Title' and 'Title Description' will be text boxes for user input, 'Start Date' and 'End Completion Date' are currently also text boxes, however to improve validation we may add a drop down calendar at both dates. The 'Member's Assigned' box contains a drop-down list of all the members currently added so it makes it easy to assign or re-assign people to specific tasks \cite{se.qa.rs fr5}. 'Status' is also a drop-down list that can be changed between 'Allocated', 'Abandoned' \cite{se.qa.rs fr6}, 'Completed' and 'Not allocated'. Any comments can then be added within the text box to describe the task that is being given or to give out sub-tasks. The commit to database button then adds the task to the database and will then sync up with the client, a confirmation screen is then shown to show the user that the task has been successfully added. \\~\\
+Clicking 'Add Task' from the home page will re-direct to the task portal, This is where people can make tasks which will then be submitted to specific users \cite{se.qa.rs fr4}. This task portal layout will also be used when updating tasks. 'Title' and 'Title Description' will be text boxes for user input, 'Start Date' and 'End Completion Date' are currently also text boxes, however to improve validation we may add a drop down calendar at both dates. The 'Member's Assigned' box contains a drop-down list of all the members currently added so it makes it easy to assign or re-assign people to specific tasks \cite{se.qa.rs fr5}. 'Status' is also a drop-down list that can be changed between 'Allocated', 'Abandoned' \cite{se.qa.rs fr6}, 'Completed' and 'Not allocated'. The commit to database button then adds the task to the database and will then sync up with the client, a confirmation screen is then shown to show the user that the task has been successfully added. \\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANViewTask} \\
 To view tasks from the home page the 'view tasks' button must be clicked. This page shows all of the tasks that have been made, you can filter them by using the drop-down box at the top. This list os sorted by expected completion date by default \cite{se.qa.rs fr7}.
 
 
-\textbf{TaskerCLI Interface Design} \\
-\newline
+\subsubsection{TaskerCLI Interface Design} 
 \includegraphics[width=0.5\textwidth, center]{images/5.2/TaskerCLILogin} \\
 The login screen, the first screen to appear when the client loads. TaskerCLI does not synchronise with the database until the user has logged in as specified in Requirements Specifications.\cite{se.qa.rs fr8 user id} \\~\\
 \newline
@@ -131,6 +129,7 @@ Note the changes made are now reflected in this list. Also note that the task na
 Searching using the text box searches for the string provided in the task's name, and/or it's sub-tasks. Also note that the 'return to full list' button is only selectable if there is currently a search parameter in the search box.\\~\\
 \newline
 There is a large focus on designing the interfaces of both TaskerCLI and TaskerMAN to be intuitive to regular computer users \cite{se.qa.rs ir1}.
+\clearpage
 \addcontentsline{toc}{section}{REFERENCES}
 \begin{thebibliography}{12}
 \bibitem{se.qa.ds} \emph{Software Engineering Group Projects}
@@ -173,13 +172,15 @@ N. W. Hardy, SE.QA.RS, IR1. 1.1 Release.
 \clearpage
 \addcontentsline{toc}{section}{DOCUMENT HISTORY}
 \section*{DOCUMENT HISTORY}
-\begin{tabular}{|l | l | l | l | l |}
+\begin{tabular}{|l | l | l | p{8cm} |l | }
 \hline
 Version & CCF No. & Date & Changes made to Document & Changed by \\
 \hline
 1.0 & N/A & 2015-10-27 & Initial creation for review & L. Jones \\
 \hline
 1.1 & N/A & 2015-10-28 & Updated the TaskerCLI user interface section & M. Goly \\
+\hline
+1.2 & N/A & 2015-10-28 & Created sub-subsections for  Use-cases and User-inerface design subsections, updated TaskerMAN Task Portal image and information, minor grammatical revision document-wide & L. Jones \\
 \hline
 \end{tabular}
 \label{thelastpage}
