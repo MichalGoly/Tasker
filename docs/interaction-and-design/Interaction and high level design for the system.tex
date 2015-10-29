@@ -66,13 +66,12 @@ TaskerMAN - This component, representing the web application has one required in
 \newline 
 TaskerCLI - This component representing the client has one provided interface (JDBC). Since it is using Java to connect to the database, TaskerSRV as well as SQLite will require that the interface JDBC be implemented on the client or else there will be no database connection. \\
 \newline SQLite - This component representing the local database on the client has one required interface (JDBC) which makes it possible for the client to connect to it.
-\clearpage
 \section{INTERACTION DESIGN}
 \subsection{Use-cases}
 \subsubsection{TaskerMAN Use-Case}
 \includegraphics[width=\textwidth]{images/5.1/TaskerMANUseCase}
-The TaskerMAN use case diagram above depicts clearly how the web administration application will be able to be used by the administrator.  The necessary functions depicted in the specification requirements[2], are clearly accessible to the administrator after logging into the system. These functionalities are, add task, edit task, view tasks, filter display, add and edit member. The options update member and delete members as well as update task and delete task are labelled as extending.  This is because they are options and an administrator may or may not choose to delete a task or member.  Also they include a verification so that the administrator might be aware, for example, that a member to be deleted or updated might be currently assigned a task or vice versa.  Similarly the filter display is extended since an administrator may choose to filter display results or not.
-Example Usage Scenario:
+The TaskerMAN use case diagram above depicts clearly how the web administration application will be able to be used by the administrator.  The necessary functions depicted in the specification requirements\cite{se.qa.rs} are clearly accessible to the administrator after logging into the system. These functionalities are, add task, edit task, view tasks, filter display, add and edit member. The options update member and delete members as well as update task and delete task are labelled as extending.  This is because they are options and an administrator may or may not choose to delete a task or member.  Also they include a verification so that the administrator might be aware, for example, that a member to be deleted or updated might be currently assigned a task or vice versa.  Similarly the filter display is extended since an administrator may choose to filter display results or not.
+Example usage scenario:
 \begin{enumerate}
 	\item The administrator logs onto the web application system.
 	\item Selects "add member" and registers the members.
@@ -83,11 +82,17 @@ Example Usage Scenario:
 	\item Administrator decides that one more task is actually not needed.  He or she clicks on "edit task", selects the task and clicks on "delete task".  A prompt is displayed informing that the task is associated with a member.  If the administrator is comfortable to delete, then the action is executed.
 	\item Administrator clicks on "view tasks" and all the tasks displayed.  An option is also available for the administrator to filter display results accordingly as specified in the requirements[8].
 	\item The administrator has finished using the system and he or she clicks on "log out" and the session ends.
-\end{enumerate} 
+\end{enumerate}
 \subsubsection{TaskerCLI Use-Case}
-
-*insert image here* 
-
+\includegraphics[width=\textwidth]{images/5.1/TaskerCLIUseCase}
+The TaskerCLI use-case diagram above depicts how TaskerCLI will be used by "actors".  The diagram illustrates the different functions the application must contain as outlined in the requirements specification \cite{se.qa.rs}. These are user identification (login), local storage of tasks, task synchronisation and the function to edit tasks, both locally and to TaskerSRV. Example Usage scenario:
+\begin{enumerate}
+	\item The actor logs onto the Java application.
+	\item The application synchronises with TaskerSRV and pulls the tasks assigned to the actor and stores them to the SQLite database.
+	\item The actor clicks on 'View Task' and the task information is loaded from the SQLite database and displayed on-screen.
+	\item The actor confirms changes and clicks 'Edit Task', this will trigger another synchronisation to occur, and the changes will be pushed to TaskerSRV and to the SQLite database.
+	\item The user has completed their actions and clicks 'Log Out', terminating the system.
+\end {enumerate}	
 \subsection{User Interface design}
 \subsubsection{TaskerMAN Interface Design} 
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANHomePage} \\
@@ -104,8 +109,6 @@ Clicking 'Add Task' from the home page will re-direct to the task portal, This i
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANViewTask} \\
 To view tasks from the home page the 'view tasks' button must be clicked. This page shows all of the tasks that have been made, you can filter them by using the drop-down box at the top. This list os sorted by expected completion date by default \cite{se.qa.rs fr7}.
-
-
 \subsubsection{TaskerCLI Interface Design} 
 \includegraphics[width=0.5\textwidth, center]{images/5.2/TaskerCLILogin} \\
 The login screen, the first screen to appear when the client loads. TaskerCLI does not synchronise with the database until the user has logged in as specified in Requirements Specifications.\cite{se.qa.rs fr8 user id} \\~\\

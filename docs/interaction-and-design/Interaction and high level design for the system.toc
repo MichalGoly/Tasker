@@ -9,8 +9,8 @@
 \contentsline {subsection}{\numberline {3.1}Use-cases}{5}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}TaskerMAN Use-Case}{5}{subsubsection.3.1.1}
 \contentsline {subsubsection}{\numberline {3.1.2}TaskerCLI Use-Case}{6}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}User Interface design}{6}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}TaskerMAN Interface Design}{6}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}TaskerCLI Interface Design}{8}{subsubsection.3.2.2}
-\contentsline {section}{REFERENCES}{12}{subsubsection.3.2.2}
-\contentsline {section}{DOCUMENT HISTORY}{13}{section*.2}
+\contentsline {subsection}{\numberline {3.2}User Interface design}{7}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}TaskerMAN Interface Design}{7}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}TaskerCLI Interface Design}{9}{subsubsection.3.2.2}
+\contentsline {section}{REFERENCES}{13}{subsubsection.3.2.2}
+\contentsline {section}{DOCUMENT HISTORY}{14}{section*.2}
