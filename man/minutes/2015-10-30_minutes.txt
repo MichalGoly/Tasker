@@ -1,0 +1,28 @@
+Project: Group Project 05 
+Meeting: Weekly project meeting
+Persons present: All project members were present
+Place and date of meeting: C55, Friday 30th October
+Circulation List: All project members inluding project manager
+Author: Tom Oram
+Date of minutes: 30th October 2015
+Version 1.0
+
+Matters Arising:
+================
+
+Action: Tom Mills
+1. Tom needs to present his work on the test specification
+
+Action: Tom Oram
+2. Update hours worked on team spread sheet
+
+Action: Josh
+3. Josh needs to think of some new ideas for the interface to our TaskerMan (task manager) page
+
+Action: Luke
+4. Need to send Chris Loftus the detailed plan of the gantt chart.
+
+New Business
+============
+
+This week we finished our deliverable on time and up to date with very few flaws. Therefore our new business is to complete the actions above and prepare for our next meeting on Monday.
