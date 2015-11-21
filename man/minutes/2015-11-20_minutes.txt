@@ -10,7 +10,7 @@ Version 1.0
 Matters Arising
 ===============
 
-1. Today we reviewed the first deliverable feedback and discussed what needed to be compelted in order to boost the grade we ahcieved.
+1. Today we reviewed the first deliverable feedback and discussed what needed to be completed in order to boost the grade we achieved.
 
 ACTION:
 2. Tino needs to update his hours worked on the group project.
@@ -19,17 +19,17 @@ ACTION:
 3. Michal said he would be able to test our first deliverable for the feedback we recieved today.
 
 ACTION:
-4. Luke needs to email Nigel about direct communication over the database is ok and also inquire about sorting.
+4. Luke needs to email Nigel asking if direct communication over the database is ok and also inquire about sorting in TaskerCLI.
 
 ACTION:
-5. Tom Mills needs to look into using the SPIKE program for our next deliverable and for our next meeting on Wednesday.
+5. Tom Mills needs to write a narrative for spike programming for our next deliverable and for our next meeting on Wednesday.
 
 
 New Business
 ============
 
-6. Luke informed us all during the meeting today that he would like a review meeting on Wednesday (25th November 2015) so that we can review our progress for th upcoming deliverable
+6. Luke informed us all during the meeting today that he would like a review meeting on Wednesday (25th November 2015) so that we can review our progress for the upcoming deliverable
 
 AOB
 =============
-7. By Wednesday we need atleast a rough copy of everyones designated tasks for the deliverable Friday (27th November 2015) so that we can dicuss everyones current state of the deliverable.
+7. By Wednesday we need at least a rough copy of everyone's designated tasks for the deliverable Friday (27th November 2015) so that we can discuss everyone's current state of the deliverable.
