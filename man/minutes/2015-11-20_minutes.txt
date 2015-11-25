@@ -1,0 +1,35 @@
+Project: Group Project 07
+Meeting: Weekly: project meeting
+Persons present: All group members were present
+Place and date of meeting: C55, Friday 20th November 2015
+Circulation List: All project members present including project manager
+Auther: Tom Oram
+Date of minutes: 20th November 2015
+Version 1.0
+
+Matters Arising
+===============
+
+1. Today we reviewed the first deliverable feedback and discussed what needed to be completed in order to boost the grade we achieved.
+
+ACTION:
+2. Tino needs to update his hours worked on the group project.
+
+ACTION:
+3. Michal said he would be able to test our first deliverable for the feedback we recieved today.
+
+ACTION:
+4. Luke needs to email Nigel asking if direct communication over the database is ok and also inquire about sorting in TaskerCLI.
+
+ACTION:
+5. Tom Mills needs to write a narrative for spike programming for our next deliverable and for our next meeting on Wednesday.
+
+
+New Business
+============
+
+6. Luke informed us all during the meeting today that he would like a review meeting on Wednesday (25th November 2015) so that we can review our progress for the upcoming deliverable
+
+AOB
+=============
+7. By Wednesday we need at least a rough copy of everyone's designated tasks for the deliverable Friday (27th November 2015) so that we can discuss everyone's current state of the deliverable.

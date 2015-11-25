@@ -1,0 +1,28 @@
+
+Project: Group project 05 Meeting: Monday Weekly Project Meeting
+Persons present: All project members were present
+Place and date of Meeting: p5 - 1.61, Monday 26th October 2015
+Circulation list: All project members, project manager
+Author: Tino Joseph Garapasi
+Date of minutes: 26th October 2015
+Version 1.0
+
+
+Matters arising
+===============
+
+Database team completed their deisgn and gave a presentation.  Everyone was satisfied.
+
+
+ACTION: Tino, Michael, Adam, Will
+1. a). Send Luke all the deliverables for Friday.
+
+ACTION:  Everyone
+2. a). Review meeting on wednesday at 13:10
+
+ACTION:  PHP Team
+3. a). Meeting on Wednesday after review meeting
+
+ACTION:  Everyone
+4. a). Reminder to enter hours on spreadsheet.
+
