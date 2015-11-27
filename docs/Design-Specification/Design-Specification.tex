@@ -232,8 +232,10 @@ is completed, TeamMemberDb sends a message to the UI, telling it that it is read
 
 \clearpage
 
+\subsection{Spike Programming} To be able to explore potential solutions to the implementation for Tasker we have created a ?spike solution? by creating a prototype model for both TaskerCLI and TaskerMAN. The spike prototype for TaskerMAN was used in order to experiment running MySQL queries to the database using PHP and also to experiment keeping sessions for the user of the system. The spike prototype for CLI was used to decrease the threat of it being too technical difficult when it came to the actual implementation of TaskerCLI for example, a quickly made spike solution will help us understand how we will structure our classes and relationships between the classes. Our quick spike solutions did not fully support the functional requirements but helped us understand how we can achieve these by giving us an insight on how to structure the more complex areas of the design.   \\
 \subsection{TaskerMAN Sequence Diagram}
 \includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerMANSequenceDiagram} \\
+\clearpage
 \subsection{TaskerMAN Class Diagram}
 \includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerMANClassDiagram} \\
 The PHP class diagram above depicts just but a few major collaborating classes in the TaskerMan.  All the classes inherit variables and a single method from the Connector.php.  These variables and the CheckConnection method have to have a constant connection to the database. 
