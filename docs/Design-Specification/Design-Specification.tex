@@ -212,14 +212,14 @@ It copies this newly merged teamMember object back to both databases, then retur
 
 The above sequence diagram describes the action of a user logging in. The user provides their login details, which the UI sends to
 the TeamMemberDB static class. This class sends a request to the Syncer to receive the merged teamMember from both databases.
-The syncer runs the actions described in sd TaskerCLI_Sync and returns the teamMember to TeamMemberDB, which passes it on to the
+The syncer runs the actions described in sd TaskerCLI\textunderscore Sync and returns the teamMember to TeamMemberDB, which passes it on to the
 UI. The UI pulls the task list from the teamMember, and displays it in the UI for the user.
 
 \includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerCLISequenceDiagramUpdateTask} 
 
 Above describes what happens when a user updates a task, either by completing it or updating the list of subTasks assigned to it.
 The UI sends an update to TeamMemberDB, which first updates the local database with the newly updated task. It then calls on the Syncer
-to sync the databases again, using sd TaskerCLI_Sync. Because of the priority, the changes made locally will override TaskerSRV if it is available.
+to sync the databases again, using sd TaskerCLI\textunderscore Sync. Because of the priority, the changes made locally will override TaskerSRV if it is available.
 The syncer then returns the synced teamMember to TeamMemberDB, which passes it on to the UI. The UI then, like when logging in,
 pulls the task list from the teamMember and displays it to the user.
 
