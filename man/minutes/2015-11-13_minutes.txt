@@ -1,4 +1,4 @@
-Project: Group Project 06 
+﻿Project: Group Project 12 
 Meeting: Weekly project meeting
 Persons present: Luke Jones, Adam Neaves, Josh Mir, Tom Mills and Will Jones
 Place and date of meeting: C55, Friday 13th November 2015
