@@ -8,9 +8,9 @@
 \subtitle{Design Specificaion}
 \author{L. Jones, T. Oram, T. Garapasi, M. Goly, W. Jones, A. Neaves, J. Mir, T. MIlls}     
 \shorttitle{Design Specification}
-\version{1.6}
+\version{1.7}
 \status{Release}
-\date{2015-11-24}
+\date{2015-11-27}
 \configref{SE-12-DS}
 \maketitle
 \tableofcontents
@@ -144,11 +144,11 @@ The LOGOUT sub component is shown as requiring a session established after the L
   \includegraphics[width=0.75\textwidth, center]{images/Detailed-Design/image1.jpg}
 
   We are using the Data Access Object design pattern, to abstract our database contents and more easily access it from within the Java client.
-  We've abstracted our database tables into Java entities, as an example, in the image above TaskElement.java corresponds to the TaskElement table in the databases.
+  We have abstracted our database tables into Java entities, as an example, in the image above TaskElement.java corresponds to the TaskElement table in the databases.
   
   
   
-  \includegraphics[width=0.75\textwidth, center]{images/Detailed-Design/image2.jpg}
+  \includegraphics[width=1\textwidth, center]{images/Detailed-Design/image2.jpg}
   
   In order to access the abstracted data from the database we use a selection of data access classes:
   These classes apply the DAO pattern, and call methods in order to send properly formatted SQL queries to the appropriate database, and present the result of the queries in the form of the previously described entities. 
@@ -193,14 +193,45 @@ Once logged in, view users will enable you to look at all the people using the s
 \end{itemize}
 \clearpage
 \section{Detailed Design}
+\subsection{TaskerSRV Entity-Relationship Diagram}
+\includegraphics[width=1\textwidth, center]{images/Detailed-Design/taskerSRV} 
+
 \subsection{TaskerCLI Sequence Diagrams}
-Here is a login sequence diagram of TaskerCLI: \\
+The following are the sequence diagrams describing the major actions taken by TaskerCLI, namly logging in to the system, updating
+a task, logging out, and the synchroniser syncing the changes made to the local and remote databases.
+
+\includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerCLISequenceSync} 
+
+Above shows the sequence diagram for the action of syncing the two databases. It works by first checking if TaskerSRV can be connected to,
+then branches depending on the connections availability.
+If the connection is available, the syncer class gets a copy of the team member from both the local database, and TaskerSRV. It performs
+a sort of merge on the two copies, updating information depending on the priority of changes made, clarified in FR9 of the specification document.
+It copies this newly merged teamMember object back to both databases, then returns it.
+
 \includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerCLISequenceDiagramLogin} 
-Here is a logout sequence diagram of TaskerCLI: \\
+
+The above sequence diagram describes the action of a user logging in. The user provides their login details, which the UI sends to
+the TeamMemberDB static class. This class sends a request to the Syncer to receive the merged teamMember from both databases.
+The syncer runs the actions described in sd TaskerCLI_Sync and returns the teamMember to TeamMemberDB, which passes it on to the
+UI. The UI pulls the task list from the teamMember, and displays it in the UI for the user.
+
+\includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerCLISequenceDiagramUpdateTask} 
+
+Above describes what happens when a user updates a task, either by completing it or updating the list of subTasks assigned to it.
+The UI sends an update to TeamMemberDB, which first updates the local database with the newly updated task. It then calls on the Syncer
+to sync the databases again, using sd TaskerCLI_Sync. Because of the priority, the changes made locally will override TaskerSRV if it is available.
+The syncer then returns the synced teamMember to TeamMemberDB, which passes it on to the UI. The UI then, like when logging in,
+pulls the task list from the teamMember and displays it to the user.
+
 \includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerCLISequenceDiagramLogout}
-Here is a sequence diagram of TaskerCLI when updating a task: \\
-\includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerCLISequenceDiagramUpdateTask}
+
+Above describes how TaskerCLI goes about closing when the user logs out. When the user logs out, the UI sends a close command to TeamMemberDB,
+telling it to perform a sync with the databases in order to save any last changes before shutting TaskerCLI. It requests a sync from the Syncer,
+which synchronises both databases. TeamMemberDB does not request the teamMember be returned as it is not needed. Instead, once the Sync process
+is completed, TeamMemberDb sends a message to the UI, telling it that it is ready to shut down. The UI then closes. 
+
 \clearpage
+
 \subsection{TaskerMAN Sequence Diagram}
 \includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerMANSequenceDiagram} \\
 \subsection{TaskerMAN Class Diagram}
@@ -274,6 +305,8 @@ Version & CCF No. & Date & Changes made to Document & Changed by \\
 1.5 & N/A & 2015-11-24 & Added Sections for Design Specification Review & L. Jones \\
 \hline
 1.6 & N/A & 2015-11-27 & Compiled team's  Component Description, Significant Classes and Detailed Design sections for release & L. Jones \\
+\hline
+1.7 & N/A & 2015-11-27 & Added TaskerSRV diagram and updated the TaskerCLI sequence diagram narrative for release & M. Goly \\
 \hline
 \end{tabular}
 \label{thelastpage}
