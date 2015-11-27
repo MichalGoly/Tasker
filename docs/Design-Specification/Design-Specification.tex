@@ -8,8 +8,13 @@
 \subtitle{Design Specificaion}
 \author{L. Jones, T. Oram, T. Garapasi, M. Goly, W. Jones, A. Neaves, J. Mir, T. MIlls}     
 \shorttitle{Design Specification}
+<<<<<<< HEAD
+\version{1.6}
+\status{Release}
+=======
 \version{1.5}
 \status{Rview}
+>>>>>>> 0567dfcd5745085ee27d591e757a1f2ba713e4ad
 \date{2015-11-24}
 \configref{SE-12-DS}
 \maketitle
@@ -19,7 +24,11 @@
 \subsection{Purpose of this document}
 The purpose of this document is to outline the ways in which our systems work and communicate with one another, explain how users will interact with the system as a whole and to provide a basic user-interface design for TaskerMAN and TaskerCLI.
 \subsection{Scope}
+<<<<<<< HEAD
+This document covers the design and architecture aspect of the assignment, covering deployment description, interaction design, component description, significant classes and detailed design. \\
+=======
 This document specifically covers the Deployment Description and Interaction Design sections of the Design Specifications Standards \cite{se.qa.ds}, and as such does not include the Component Description, Significant Classes or Detailed Design sections required of the full Design Specifications Standards.\\
+>>>>>>> 0567dfcd5745085ee27d591e757a1f2ba713e4ad
 \newline
 This document should be read by all project members. It is assumed that the reader is already familiar with the Design Specification Standards \cite{se.qa.ds}.
 \subsection{Objectives}
@@ -27,7 +36,13 @@ The objectives of this document are as follows:
 \begin{itemize}
 	\item Explain the way the systems interact with one another and the platforms in which they operate with the asisstance of UML diagrams.
 	\item Provide detail on the way in which "actors" are expected to interact with the system through the use of use-case diagrams.
+<<<<<<< HEAD
+	\item Present a basic User-Interface design for the TaskerMAN and TaskerCLI systems with the aid of images to demonstrate how such systems will operate and keep to the requirements set in the Requirements Specification \cite{se.qa.rs}. \\
+	
+\textbf{Please note the Deployment Description and Interaction Design sections remain unchanged since the last feedback, this version sees the addition of Component Description, Significant Classes and Detailed Design.}	
+=======
 	\item Present a basic User-Interface design for the TaskerMAN and TaskerCLI systems with the aid of images to demonstrate how such systems will operate and keep to the requirements set in the Requirements Specification \cite{se.qa.rs}.
+>>>>>>> 0567dfcd5745085ee27d591e757a1f2ba713e4ad
 \end{itemize} 
 \clearpage
 \section{DEPLOYMENT DESCRIPTION}
@@ -133,16 +148,30 @@ Searching using the text box searches for the string provided in the task's name
 \newline
 There is a large focus on designing the interfaces of both TaskerCLI and TaskerMAN to be intuitive to regular computer users \cite{se.qa.rs ir1}.
 \section{Component Description}
+<<<<<<< HEAD
+\subsection{TaskerMAN Component Description}
+\includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerMANComponentDiagram}
+The component diagram above shows a further and advanced decomposed version unlike the previous diagram submitted before.  As can be seen, two external interfaces are provided with one connecting to the database and the initial user interface which through a given port lets us use the login component which gives access to the basic system.  The first point to using the basic system is either through member add or task add as shown. These two sub components provide respective interfaces to other sub components.  For example its clear that the TASK ADD component requires  an interface from MEMBER ADD, at the same time it also provides an interface which is then used by TASK VIEW and TASK EDIT component. TASK VIEW sub component also provides an interface which is then used by the TASK FILTER sub component. 
+The LOGOUT sub component is shown as requiring a session established after the LOGIN component has been initiated. \\
+\section{Significant Classes} 
+\subsection{TaskerCLI Significant Classes}
+  \includegraphics[width=0.75\textwidth, center]{images/Detailed-Design/image1.jpg}
+=======
 \section{Significant Classes}
 \subsection{TaskerCLI Significant Classes}
   \includegraphics[width=0.75\textwidth, center]{images/Detailed-Design/image1.gif}
+>>>>>>> 0567dfcd5745085ee27d591e757a1f2ba713e4ad
 
   We are using the Data Access Object design pattern, to abstract our database contents and more easily access it from within the Java client.
   We've abstracted our database tables into Java entities, as an example, in the image above TaskElement.java corresponds to the TaskElement table in the databases.
   
   
   
+<<<<<<< HEAD
+  \includegraphics[width=0.75\textwidth, center]{images/Detailed-Design/image2.jpg}
+=======
   \includegraphics[width=0.75\textwidth, center]{images/Detailed-Design/image2.gif}
+>>>>>>> 0567dfcd5745085ee27d591e757a1f2ba713e4ad
   
   In order to access the abstracted data from the database we use a selection of data access classes:
   These classes apply the DAO pattern, and call methods in order to send properly formatted SQL queries to the appropriate database, and present the result of the queries in the form of the previously described entities. 
@@ -151,6 +180,18 @@ There is a large focus on designing the interfaces of both TaskerCLI and TaskerM
   \subsubsection{Description of each significant Class}
 
   \begin{itemize}
+<<<<<<< HEAD
+  		\item \textbf{TeamMember} class abstracts the TeamMember table in both databases. Its instance variables correspond to columns inside 
+  		databases and can be accessed and modified using the getters and setters provided. Instance of this class will be used to populate
+  		the user interface with data in the program.
+  		\item \textbf{Task} class abstracts the Task table in both databases. Its instance variables correspond to columns inside 
+  		databases and can be accessed and modified using the getters and setters provided. Each task has an associated list of task elements. The status of a task is stored as an integer in the database and is then transformed to an appropriate \textbf{TaskStatus} Enum inside the program.
+  		\item \textbf{TaskElement} class abstracts the TaskElement table in both databases. Its instance variables correspond to columns inside 
+  		databases and can be accessed and modified using the getters and setters provided. 
+  		\item \textbf{TeamMemberDB} class is one of the data access classes in the DAO pattern. It provides useful methods which can be used to retrieve and update the \textbf{TeamMember} objects in both databases. For example the \texttt{selectTeamMemberByEmail} method will as expected acquire the connection to either the MySQL or SQLite database, prepare a suitable query statement, construct the \textbf{TeamMember}
+  		object and return it back to the caller. This is a really powerful concept which abstracts the raw SQL from the graphical user interface. After we make some changes to the object, we can use a single method \texttt{updateTeamMember} to put it back to the database. 
+  		\item \textbf{TaskDB} class is very similliar to the previously described \textbf{TeamMemberDB} class. It also is a part of the DAO pattern and provides direct access to the information stored in the task table in both databases. It will be typically only used by the previosuly mentioned \textbf{TeamMemberDB} to construct the complete \textbf{TeamMember} object.
+=======
   		\item \textbf{TeamMember} class abstracts the TeamMember table in both databases. Its instance variables correspond to collumns inside 
   		databases and can be accessed and modified using the getters and setters provided. Instance of this class will be used to populate
   		the user interface with data in the program.
@@ -161,6 +202,7 @@ There is a large focus on designing the interfaces of both TaskerCLI and TaskerM
   		\item \textbf{TeamMemberDB} class is one of the data access classes in the DAO pattern. It provides useful methods which can be used to retrieve and update the \textbf{TeamMember} objects in both databases. For example the \texttt{selectTeamMemberByEmail} method will as expected acquire the connection to either the MySQL or SQLite database, prepare a suitable query statement, construct the \textbf{TeamMember}
   		object and return it back to the caller. This is a really powerful concept which abstracts the raw SQL from the graphical user interface. After we make some changes to the object, we can use a single method \texttt{updateTeamMember} to put it back to the database. 
   		\item \textbf{TaskDB} class is very similiar to the previously described \textbf{TeamMemberDB} class. It also is a part of the DAO pattern and provides direct access to the information stored in the task table in both databases. It will be typically only used by the previosuly mentioned \textbf{TeamMemberDB} to construct the complete \textbf{TeamMember} object.
+>>>>>>> 0567dfcd5745085ee27d591e757a1f2ba713e4ad
   		\item \textbf{TaskElementDB} class is basically the same as the previous one, but it enables the access to the TaskElement table in both databases.
   		\item \textbf{ConnectionManager} class can be used to actually connect to both databases. It enables the caller to acquire a \texttt{Connection} object to either the remote MySQL (TaskerSRV), or locally run SQLite. \textbf{ConnectionManager} is capable of registering appropriate JDBC drivers depending on the connection required. 
         \item \textbf{Syncer} class contains the logic for conflict resolution between the contents of the two databases within its \texttt{sync} method. The sync method takes two \textbf{TaskMember} objects, generates a canonical TeamMember object, which is supplied to the databases and ui. The Syncer class also contains the \texttt{login} method, displaying a dialog for user login and returning an appropriate \textbf{TeamMember} object.
@@ -170,6 +212,47 @@ There is a large focus on designing the interfaces of both TaskerCLI and TaskerM
         \item \textbf{SidebarPanel} extends \textbf{JFrame} class is used for controls within \textbf{SidebarPanel}, such as logging out and searching tasks.
         \item \textbf{TaskFrame} extends \textbf{JDialog} class is used to display details of a task when invoked by \textbf{MainFrame}. Allows editing of \textbf{TaskElement} and also marking of a Task as complete.
   \end{itemize}
+<<<<<<< HEAD
+\subsection{TaskerMAN Significant Classes}
+\begin{itemize}
+\item \textbf{Adding a Task} \\~\\
+One file used for processing data is the addtask.php file. This file firstly allows the user to enter in some information such as the start date of the task, completion date and member assigned. Then the information that is typed in, is processed using another PHP file which inserts what the user has typed in to the database, the file firstly connects to the database, checks the connection and then gets all the data the user typed in and adds it to the database. An if statement is then included to check that the data has been entered into the database correctly, if it has, the web page will display a message to the user confirming that a new task has been added to the database, then the user is presented with 3 options to add another task, log out or go back to the home page. If the data is not added to the database correctly due to a problem an error message will be printed out to the user and they won?t be able to go on any further in the process. \\~\\
+\item \textbf{Edit Tasks} \\~\\
+The edittasks.php file presents the user with an area to modify the tasks they have set for example, changing who they have allocated the task to. This connects to the database and prints all of the relevant information in a table - all of the tasks are displayed at this point. From here the user can either update the task or delete the task. If they click on delete, a file called connectedb.php will run and depending on the id that it has (each record in the table has an id for reference purposes) it will then delete all the information from the task list via an SQL command and then closes the database connection. If the user selects the update option from the table they will be taken to a file called updatetask.php this once again is referenced using an ID and once the user clicks this button they are presented with all the information of the task, they can then update the description of the task, change the dates and member allocated.  To get this information, the user is connected to the database and a SELECT SQL query is used. Some text boxes are left open and if the information changes then the field is sent to the database that changes. Once you have updated the records, the user will be able to check their changes have been made by viewing all the tasks. If the update has been successful you will be presented with a confirmation message, if you have not, an error message will be displayed. If you have been successful you will have the option to update another record or go back to the home page. \\~\\
+\item \textbf{View Tasks} \\~\\
+If you select this option from the home page you will be taken to a file called viewtasks.php. This web page pulls some information from the database using an SQL query to show all of the tasks and then it puts this information into a table to make it easier to read.  This webpage also includes a filter that allows the user to view the data based on the member or the status of the task. Once the user has looked at this information they can either log out or navigate back to the home page. \\~\\
+\item \textbf{Add User} \\~\\
+If you select the add user option from the home page - you will be presented with two text boxes described earlier in this document. Once you click the submit button you will be taken to a webpage called addusers.php this just adds the information that the user has typed into the database via an SQL command. This once again has an if statement which if unsuccessful will provide the user with a simple error message, if successful in adding the user a confirmation will be shown and then the user will have a few navigation choices. \\~\\
+\item \textbf{Edit User} \\~\\
+The editusers.php file presents the user with an area to modify their details if they have typed them in wrong or their details change. Currently the only fields we have here are name and email address. If the user wants to update these they just click on the update link and are then taken to an updateusers.php page where they can then re-enter their name and email address. Once they have done that and are happy with it they click the update button which sends the new data they have put in to the database. They will then be provided with a confirmation message if it is successfully updated, and then you can navigate to other areas of the website. To make sure that the user types in information in the correct format we will be implementing some validation to check that the user is entering data of the correct type. Next you can go back to the editusers.php file and also delete records of users. This will be used for managers so that they can delete users from TaskerMAN if they need to. All that they need to do is look at the table of users that is provided in editusers.php and then click on the delete link of the user that they want to get rid of. Once they do that a confirmation message will be displayed telling them that the user has been successfully deleted. Once this action is completed by the user a file called connectdb.php runs which connects to the database and then a delete SQL command is used to get rid of the user they deleted - each user has a reference number, so this is what is used to delete a specific user. Next time they view the edit user?s web page the table will have been updated to show all the users they want. To make sure users aren't accidentally deleted we should implement a pop up box to appear and make the user confirm that they want to delete a specific user.  \\~\\
+\item \textbf{View Users} \\~\\
+Once logged in, view users will enable you to look at all the people using the system - this tool will be used for managers only so they can view all the team members they can allocate tasks too. Once they have clicked on the view user?s page, a table will be displayed - this will be populated with information about the users in the system (which will just be their name and email) and what tasks they have been allocated to do. To get this information, an SQL query will be used to select all the users and then this information is just output into a table.  \\~\\
+\end{itemize}
+\clearpage
+\section{Detailed Design}
+\subsection{TaskerCLI Sequence Diagrams}
+Here is a login sequence diagram of TaskerCLI: \\
+\includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerCLISequenceDiagramLogin} 
+Here is a logout sequence diagram of TaskerCLI: \\
+\includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerCLISequenceDiagramLogout}
+Here is a sequence diagram of TaskerCLI when updating a task: \\
+\includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerCLISequenceDiagramUpdateTask}
+\clearpage
+\subsection{TaskerMAN Sequence Diagram}
+\includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerMANSequenceDiagram} \\
+\subsection{TaskerMAN Class Diagram}
+\includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerMANClassDiagram} \\
+The PHP class diagram above depicts just but a few major collaborating classes in the TaskerMan.  All the classes inherit variables and a single method from the Connector.php.  These variables and the CheckConnection method have to have a constant connection to the database. 
+UPDATE\textunderscore USERS class is shown as a composition to the ADD\textunderscore USERS.  This means that it depends solely on the availability of the ADD\textunderscore USERS class.  If the ADD\textunderscore USERS class is removed then UPDATE\textunderscore USERS class will also not exist.
+The ADD\textunderscore TASK class is show to make use of the ADD\textunderscore USERS class.  This is where we get our users from.  The VIEW\textunderscore TASK and EDIT\textunderscore TASK   classes are shown as a composition to ADD\textunderscore TASK.
+\subsection{TaskerMAN Object Diagram}
+\subsubsection{TaskerMAN Object Relationship between the ADD\textunderscore USERS and EDIT\textunderscore USERS CLASS}
+Below is an example of the object instances and association in the TaskerMAN at a particular point in time. In this case an instance is created with the user and email of a new member. The two other instances updateMary and DeleteMary are both possible  as a result of the Mary instance in the Add\textunderscore Users class. An example is the diagram showing a wrong spelling name entered in the Mary Instance.  Since the Add\textunderscore Users class has an association with the Edit\textunderscore Users class we can instantiate the UpdateMary instance and correct the name to Mary Joseph. Similarly we can instantiate the DeleteMary instance and delete the member with the wrong name if we wish to. \\
+\includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerMANObjectDiagram1} \\
+\subsubsection{TaskerMAN Object Relationship between the ADD\textunderscore TASK and EDIT\textunderscore TASKS CLASS}
+The logic of the object interaction below is essential the same as in above. Here the Mary instance is established and its values are clearly depicted.  All the values in MaryBirth object are correct except the EndDate.  We therefore instantiate the MaryEdit object and make the necessary changes as shown. We can instantiate another object MaryFilter and view the task. \\
+\includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerMANObjectDiagram2} \\
+=======
 
 
 \subsection{TaskerMAN Significant Classes}
@@ -201,6 +284,7 @@ Once logged in, view users will enable you to look at all the people using the s
 \subsection{TaskerMAN Diagrams}
 \includegraphics[width=1\textwidth, center]{images/Detailed-Design/TaskerMANSequenceDiagram} \\
 \clearpage
+>>>>>>> 0567dfcd5745085ee27d591e757a1f2ba713e4ad
 \addcontentsline{toc}{section}{REFERENCES}
 \begin{thebibliography}{12}
 \bibitem{se.qa.ds} \emph{Software Engineering Group Projects}
@@ -257,7 +341,13 @@ Version & CCF No. & Date & Changes made to Document & Changed by \\
 \hline
 1.4 & N/A & 2015-10-29 & Updated version from review to release & L. Jones \\
 \hline
+<<<<<<< HEAD
+1.5 & N/A & 2015-11-24 & Added Sections for Design Specification Review & L. Jones \\
+\hline
+1.6 & N/A & 2015-11-27 & Compiled team's  Component Description, Significant Classes and Detailed Design sections for release & L. Jones \\
+=======
 1.5 & N/A & 2015-11-24& Added Sections for Design Specification Review & L. Jones \\
+>>>>>>> 0567dfcd5745085ee27d591e757a1f2ba713e4ad
 \hline
 \end{tabular}
 \label{thelastpage}
