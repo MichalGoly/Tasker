@@ -1,0 +1,3 @@
+[submodule "TaskerCLI"]
+	path = TaskerCLI
+	url = https://github.com/MichalGoly/TaskerCLI

@@ -1,0 +1,44 @@
+Project: Group Project 12. 
+Meeting: Weekly: Weekly meeting with project manager. 
+Persons present: All people present 
+Place and date of meeting: C55, Friday 27th November 2015
+Circulation List: All project members present
+Author: Thomas Mills
+Date of minutes: 27th November 2015.
+Version 1.0
+
+
+Matters Arising
+===============
+
+At the start of the meeting we delivered the detailed design deliverable to the project
+leader.
+Luke also noted that he will be giving a tutorial on how to use Latex for any group members
+that are still having problems with it. 
+
+
+
+Action: 
+1. Luke to change 'TaskMember' to 'TeamMember' in the deliverable.
+
+Action: 
+2. Michal finish syncer for the TaskerCLI prototype. 
+
+Action: 
+3. Luke: PHP meeting wednesday 1pm (room not booked).
+
+Action: 
+4. Java team, group meeting next week 11am Think tank.
+
+
+New Business
+===============
+
+We need to find out where we will deploy the TaskerSRV database.
+ 
+Need to merge TaskerCLI prototype with our main repository on github. 
+
+
+AOB
+===============
+N/A

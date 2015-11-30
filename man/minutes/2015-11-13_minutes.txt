@@ -1,0 +1,33 @@
+﻿Project: Group Project 12 
+Meeting: Weekly project meeting
+Persons present: Luke Jones, Adam Neaves, Josh Mir, Tom Mills and Will Jones
+Place and date of meeting: C55, Friday 13th November 2015
+Circulation List: All project members present inluding project manager
+Author: Luke Jones
+Date of minutes: 13th November 2015
+Version 1.0
+
+Matters Arising:
+================
+
+1. This week we finished our ‘Test Specification’ deliverable on time and presented it to the project manager, who gave us initial feedback. The document needs to include error conditions and the “input”/“output” columns need to contain actual instances of data throughout the test table.
+
+2. Luke Jones discussed the need to prepare for the next deliverable. The project manager gave us a brief overview into the sections that are required to be completed.
+
+New Business
+============
+
+Action: Luke Jones
+3. Presentation to group on Monday with regards to next deliverable - assign roles to document the different section of the design specification.
+4. Renew room booking for weekly Monday meetings.
+5. Update the online spreadsheet to include dates.
+
+Action: Tom Oram
+6. Update hours worked on team spread sheet.
+
+Action: Josh and Michal
+7. Assigned task of documenting the ‘Significant Classes’ for TaskerCLI.
+
+AOB
+============
+8. The TaskerCLI subteam are to discuss a proposed colour scheme/theme as decided upon by the TaskerMAN subteam in order to achieve a cohesive design between the different platforms in their next meeting.

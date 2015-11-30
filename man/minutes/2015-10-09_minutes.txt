@@ -1,0 +1,49 @@
+Project: Group project 12 Meeting: Weekly Project Meeting
+Persons present: All project members were present
+Place and date of Meeting: C55, Friday 9th October 2015
+Circulation list: All project members, project manager
+Auther: Tom Oram
+Date of minutes: 10th October
+Version 1.0
+
+Matters arising
+===============
+
+ACTION: tho4
+1. Today Tom Oram was elected to take the minutes
+
+ACTION: tig  
+2. Next Tino said he would make a facebook account so that we can all talk on the group chat  
+3. Tino also volunteered himself to sort the group GitHub account out 
+4. Tino has a presentation on user interface for web side
+ACTION: mwg2
+5. Micheal volunteered To sort an email to organize when everyone is free for face to face meetings 
+6. Presentation to be done next week on Design
+ 
+7. We all said that we can communicate through facebook and therefore will be our main way of talking 
+ 
+8. We also need to email loftus our updated blog (our choice) but wordpress was mentioned and make sure that it is only one post a week and no more than 80 hours total 
+ 
+9. Make sure we have all read the project, briefly atleast so that we are all aware of what must be done 
+ 
+10. Next week we will probably be deciding our roles within the tea, 
+ 
+11. We decided that sometime in the future we will organize a meeting to show the team what we are working on and also what progress we are making so that we can summarize our overall progression 
+
+ACTION: luj9
+12. Luke is doing a presentation on project planning
+
+ACTION: tam15
+13. Tom is doing a presentation on testing
+
+ACTION: jom47
+14. Josh has a presentation on review standards
+
+ACTION: wij5
+15. William has a presentation on operational procedures
+
+ACTION: adn2
+16. Adam has a presentation on java design for the web
+
+ 
+ 

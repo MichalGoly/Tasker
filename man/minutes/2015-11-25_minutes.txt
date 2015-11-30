@@ -1,0 +1,39 @@
+Project: Group Project 12
+Meeting: Weekly: Review meeting
+Persons present: All people present apart from Tom Oram
+Place and date of meeting: 1.6.1, Wednesday 25th November 2015
+Circulation List: All project members present apart from Tom Oram
+Author: Thomas Mills
+Date of minutes: 25th November 2015
+Version 1.0
+
+
+Matters Arising
+===============
+
+We had a response from our enquirey to nigel explaining that we will loose marks for
+security if we did not have an API from TaskerCLI. We then taked about ways that we 
+can still have the same security with still connecting over JDBC. 
+
+Michal showed the group the diagram for the significant classes explaining to the rest
+of the group the structure of the classes for TaskerCLI
+
+
+Action: 
+1. Tino to read up on JSON and report back to the group. 
+
+Action:
+2. Tom 2 to add spike programming narative.
+
+Action: 
+3. Luke to swap the words and/is around in the change user part of the deliverable document. 
+
+
+New Business
+===============
+
+No new business, just to complete tasks for the next deliverable. 
+
+AOB
+===============
+N/A
