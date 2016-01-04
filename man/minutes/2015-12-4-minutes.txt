@@ -1,0 +1,23 @@
+Project: Group Project 12
+Meeting: Weekly: project meeting
+Persons present: All group members were present
+Place and date of meeting: C55, Friday 20th November 2015
+Circulation List: All project members present including project manager
+Auther: Tom Oram
+Date of minutes: 4th December 2015
+Version 1.0
+
+Matters Arising
+===============
+
+1. We had the review meeting discussed in last weeks minutes to discuss our current group progress for the deliverable.
+
+2. Everyone completed the actions set on them so that everything is currently on track and we are meeting our current time schedule
+
+3. There were not any major actions that needing placing as we are currently meeting are schedule and all work had been completed up until christmas
+
+New Business
+============
+
+4. We decided it best that everyone needs to keep their minds refreshed in terms of coding and the different criteria over the holidays so that we can complete all of the work needed to be done during coding week efficiently
+
