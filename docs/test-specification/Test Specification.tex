@@ -80,8 +80,6 @@ MAN-014 & FR7 & TaskerMAN should support the filtering of tasks dependant on the
 \hline
 MAN-015 & FR7 & TaskerMAN should not accept blank inputs in any of its forms & On the add tasks and add users pages as well as the edit tasks and edit users webpages try and leave the fields blank and submit the data. & Error messages thrown up - you should not be able to submit blank fields into the database & Not being able to submit blank fields to the database. \\
 \hline
-MAN-016 & FR7 & TaskerMAN should not allow SQL statements or HTML to be entered into any field that accesses the database. & SQL statements to delete , copy and select data. & Their wont be much output providing the SQL injections dont disrupt the database & The databases should not be affected by any of the SQL statements put in.  \\
-\hline
 CLI-001 & FR8 & TaskerCLI should be able to identify the member upon logging in & Upon login, type an admins username and password and then press the login button Username: jsmith
 Password: password; & A query should be sent to the database to locate the user with the data entered & The user will then be logged in and on the main page of TaskerCLI the current user will say "logged in as "jsmith"" \\
 \hline
