@@ -10,7 +10,8 @@ header("Location: login.php");
 }else{
 	
 echo "Your session is running " . $username;	
-	
+
+//initializes session, reports all errors, echos a message of the person is logged in.	
 }
 	
 
@@ -31,25 +32,29 @@ echo "Your session is running " . $username;
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
   
   <title>TaskerMAN</title>
+ 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+ 
   <!-- Custom styles for this template -->
   <link href="jumbotron.css" rel="stylesheet">
 
 
   <script src="../../assets/js/ie-emulation-modes-warning.js">
   </script>
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  
   
   <title>TaskerMAN</title>
 </head>
 <body>
   <div>
-  <!-- CSS for the top navbar --> 
+  
     <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class = "containerCentre" >
       <div class="container">
         <div class="navbar-header">
+        	
+        	<!-- css for top nav bar and buttons --> 
           <button aria-controls="navbar" aria-expanded="false" class=
           "navbar-toggle collapsed" data-target="#navbar" data-toggle=
           "collapse" type="button"><span class="sr-only">Toggle
@@ -62,7 +67,7 @@ echo "Your session is running " . $username;
           <ul class="nav navbar-nav navbar-right">
 		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <li>
-               <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
+               <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"> <!-- font awesome button--><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>
           </ul>
         </div>
@@ -74,6 +79,7 @@ echo "Your session is running " . $username;
 	  <!-- code for line under navbar --> 
           <ul class="nav nav-sidebar"></ul>
           <ul class="nav nav-sidebar">
+          	<!-- puts a space before the line --> 
             <li>
               <a href="#{{x}}">{{x}}</a>
             </li>
@@ -96,8 +102,7 @@ echo "Your session is running " . $username;
               <br>
 			  
 			  <!-- file that processes the PHP --> 
-			  
-              <form action="processUsers.php" class="form-horizontal" method=
+		 <form action="processUsers.php" class="form-horizontal" method=
               "post" role="form">
                 <div class="form-group">
 				
@@ -138,11 +143,11 @@ echo "Your session is running " . $username;
                 </div>
 				
                 <div class="form-group">
-				<!-- submit button --> 
+		
+				<!-- submit button --> 		
                   <label class="control-label col-sm-3" for="password"></label>
                   <div class="col-sm-10 col-sm-offset-3">
-		    
-                    <input class="btn btn-primary"  id="submit" name="submit"
+		    <input class="btn btn-primary"  id="submit" name="submit"
                     type="submit" value="Add User">
                   </div>
                 </div>
@@ -153,8 +158,8 @@ echo "Your session is running " . $username;
             <footer>
               <p>&copy; 2015 TaskerMan, Inc.</p>
             </footer>
-          </div><!-- /container -->
-          <!-- Bootstrap core JavaScript-->
+          </div><!--  closes the container -->
+      
           <!-- Placed at the end of the document so the pages load faster -->
           <script src=
           "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
@@ -164,10 +169,8 @@ echo "Your session is running " . $username;
           </script> 
           <script src="../../dist/js/bootstrap.min.js">
           </script> 
-          <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-           
-          <script src="../../assets/js/ie10-viewport-bug-workaround.js">
-          </script> 
+
+          
         </div>
       </div>
     </div>
