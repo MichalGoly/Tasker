@@ -22,6 +22,7 @@ echo "Your session is running " . $username;
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
     <meta content="" name="description">
     <meta content="" name="author">
     <link href="../../favicon.ico" rel="icon">
@@ -49,12 +50,12 @@ echo "Your session is running " . $username;
                 	<!-- Navbar code --> 
                     <button aria-controls="navbar" aria-expanded="false" class=
                     "navbar-toggle collapsed" data-target="#navbar"
-                    data-toggle="collapse" type="button"><span class=
-                    "sr-only">Toggle navigation</span> <span class=
-                    "icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span></button> <a class=
-                    "navbar-brand" href=
-                    "http://users.aber.ac.uk/tig/taskerMAN">TaskerMAN</a>
+                    data-toggle="collapse" type="button">
+                        
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span></button><a class="navbar-brand" 
+                    href="http://users.aber.ac.uk/tig/taskerMAN">TaskerMAN</a>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar">
                     <ul class="nav navbar-nav navbar-right">
