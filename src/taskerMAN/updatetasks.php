@@ -7,10 +7,6 @@ $username=$_SESSION['name'];
 if(!isset($username))
 {
 header("Location: login.php");
-}else{
-	
-echo "Welcome to the TaskerMAN " . $username;	
-	
 }
 	
 
@@ -122,10 +118,11 @@ $(document).ready(function(){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">TaskerMAN</a>
+          <a class="navbar-brand" href="http://users.aber.ac.uk/tig/taskerMAN">TaskerMAN</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" ng-model="bar">
+		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <li>
                <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>
@@ -224,14 +221,14 @@ $(document).ready(function(){
 	            $eid = $row["taskElementId"];
 				
 			    $descr = $row["description"];
-			  //echo $descr;
+			    
 			
-			
+			  
 			
 				echo "<div class='form-group'>";
 			    echo "<label class='control-label col-sm-3' for='email'></label>";
 				echo "<div class='col-sm-5'>";
-			  
+			      
 				echo "<input type='text'   class='form-control' name='tDescription[]' id='d_new' value='$descr' required >";
 				echo "<input type='hidden'   class='form-control' name='eid[]' id='d_new' value='$eid' >";
 				echo "</div>";

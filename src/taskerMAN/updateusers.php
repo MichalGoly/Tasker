@@ -91,6 +91,7 @@ $connection->close();
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" ng-model="bar">
+		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
 		    <li>
                <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>
@@ -135,7 +136,7 @@ $connection->close();
     <div class="form-group">
 	   <label class="control-label col-sm-3" for="fname"></label>
       <div class="col-sm-5">
-        <input type="text" class="form-control" id="fname" name="fname"  value ="<?php echo "$fname"; ?>" required >
+        <input type="text" class="form-control" id="fname" name="fname" placeholder="First name" value ="<?php echo "$fname"; ?>" required >
 	
       </div>
     </div>
@@ -144,7 +145,7 @@ $connection->close();
 	 <div class="form-group">
 	   <label class="control-label col-sm-3" for="lname"></label>
       <div class="col-sm-5">
-        <input type="text" class="form-control" name="lname" value ="<?php echo "$lname"; ?>" required>
+        <input type="text" class="form-control" name="lname"  placeholder="Last name" value ="<?php echo "$lname"; ?>" required>
 	
       </div>
     </div>
@@ -156,7 +157,7 @@ $connection->close();
 	   <label class="control-label col-sm-3" for="password"> </label>
       <div class="col-sm-5">
 	  
-        <input type="password" class="form-control" name="password" >
+        <input type="password" class="form-control" name="password" placeholder="Password">
 	
       </div>
     </div>

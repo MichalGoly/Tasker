@@ -7,14 +7,11 @@ $username=$_SESSION['name'];
 if(!isset($username))
 {
 header("Location: login.php");
-}else{
-	
-echo "Welcme to the TaskerMAN " . $username;	
-	
 }
 	
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,6 +53,7 @@ echo "Welcme to the TaskerMAN " . $username;
         </div>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right">
+		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <li>
                <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>
@@ -78,26 +76,47 @@ echo "Welcme to the TaskerMAN " . $username;
           <!-- Inserts data from add task webpage into DB -->
           
         </ol>
+		<?php
+		$eviltitle = $_POST['title'];
+		$evilemail = $_POST['mEmail'];
 		
+		if (strpos($eviltitle, '*') !== false || strpos($evilemail, '*') !== false  ){
+			
+			session_destroy();
+			header('Location: login.php');	
+		}
+		
+		
+		
+		?>
 		<?php
 		
-		$sDate = $_POST['sDate'];
-		$eDate = $_POST['eDate'];
+		$sDate = strip_tags($_POST['sDate']);
+		$eDate = strip_tags($_POST['eDate']);
+		$title = strip_tags($_POST['title']);
+		$email = strip_tags($_POST['mEmail']);
+		//echo strrchr("Hello world!","!");
 		
-		$intlast1 = substr($sDate,8,2);
-		$intlast2 = substr($eDate,8,2);
+		if (strpos($title, '*') !== false || strpos($email, '*') !== false  ){
+			
+			session_destroy();
+			header('Location: login.php');	
+		}else{
+		
+					$intlast1 = substr($sDate,8,2);
+					$intlast2 = substr($eDate,8,2);
 
-		$mid1 = substr($sDate,5,2);
-		$mid2 = substr($eDate,5,2);
+					$mid1 = substr($sDate,5,2);
+					$mid2 = substr($eDate,5,2);
 
-		$first4one = substr($sDate,0,4);
-		$first4sec = substr($eDate,0,4);
+					$first4one = substr($sDate,0,4);
+					$first4sec = substr($eDate,0,4);
 
 		if(($first4sec <= $first4one) && ($mid2 <= $mid1) &&($intlast2 < $intlast1)){
 			
 			
 					echo "<div class='alert alert-danger' align='center'>.";
-			echo $first4sec."-".$mid2."-".$intlast2;
+					echo $first4sec."-".$mid2."-".$intlast2;
                     echo "<strong> <BR><BR>DATE ERROR - COMPLETION DATE CANNOT BE BEFORE START DATE";
                     echo "<BR><BR><BR><a href='AddTaskBoot.php'><font color = 'red'>TRY AGAIN</color></a>";
                     echo "</strong>";
@@ -118,7 +137,7 @@ echo "Welcme to the TaskerMAN " . $username;
 
 
                 
-
+                   
 
 
 
@@ -133,7 +152,7 @@ echo "Welcme to the TaskerMAN " . $username;
                 if ($error) {
                   echo "All fields are required.";
                 } else {
-                    $setStatusTo2 = 2; //allocated
+                    $setStatusTo2 = 1; //allocated
                   //echo $setStatusTo1 ;
 
                             
@@ -142,7 +161,7 @@ echo "Welcme to the TaskerMAN " . $username;
 
 
                 $task = "INSERT INTO Task (title, startDate, endDate, taskStatus,TeamMember_email)
-                        VALUES ('$_POST[title]','$sDate','$eDate','$setStatusTo2','$_POST[mEmail]'
+                        VALUES ('$title','$sDate','$eDate','$setStatusTo2','$email'
                         )";
 
 
@@ -154,7 +173,7 @@ echo "Welcme to the TaskerMAN " . $username;
 
                             foreach($array as $value){
                                     $element = "INSERT INTO TaskElement (description, Task_taskId)
-                                                VALUES ('$value',(SELECT taskId FROM Task WHERE title = '$_POST[title]'))";
+                                                VALUES ('$value',(SELECT taskId FROM Task WHERE title = '$title'))";
                                     
                             
                                 if($connection->query($element)===TRUE){
@@ -167,13 +186,13 @@ echo "Welcme to the TaskerMAN " . $username;
                             }
                 }else{
                         echo "<div class='alert alert-danger'>.";
-                        echo " <strong><img src='img/warninguser.png'> <BR><BR>ERROR - $connection->error.";
+                        echo " <strong><img src='img/warninguser.png'> <BR><BR>ERROR - Incorrect Syntax in Add Task field"; //for actual error message use this--> $connection->error.";
                         echo "<BR><BR><BR><a href='AddTaskBoot.php'>TRY AGAIN</a>";
                         echo "</strong>";
                         echo "</div>";
                 }
 		    }
-                    
+		}         
                // $connection->close();                       
                 ?>
       </div>

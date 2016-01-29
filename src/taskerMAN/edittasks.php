@@ -59,6 +59,7 @@ echo "Welcome to the TaskerMAN " . $username;
         </div>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right">
+		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <li>
                <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>

@@ -35,7 +35,7 @@ echo "Welcome to the TaskerMAN " . $username;
   <link href="jumbotron.css" rel="stylesheet">
   
   <!-- Font awesome Style sheet -->
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 	
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -63,6 +63,7 @@ echo "Welcome to the TaskerMAN " . $username;
         </div>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right">
+		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <li>
                <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>

@@ -12,6 +12,7 @@ html {
 
 body {
     margin: 0;
+	
 }F
 
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
@@ -117,6 +118,8 @@ button,input,optgroup,select,textarea {
     color: inherit;
 }
 
+
+
 button {
     overflow: visible;
 }
@@ -128,6 +131,9 @@ button,select {
 button,html input[type=button],input[type=reset],input[type=submit] {
     -webkit-appearance: button;
     cursor: pointer;
+	width: 100%;
+	p-left: 0;
+	margin-right: 0;
 }
 
 button[disabled],html input[disabled] {
@@ -1372,7 +1378,7 @@ button,input,select,textarea {
 }
 
 a {
-    color: #9CF;
+    color: #337ab7;
     text-decoration: none;
 }
 
@@ -1394,6 +1400,8 @@ figure {
 img {
     vertical-align: middle;
 	padding:  9px;
+	display: block;
+	margin: auto;
 }
 
 .carousel-inner>.item>a>img,.carousel-inner>.item>img,.img-responsive,.thumbnail a>img,.thumbnail>img {
@@ -1887,7 +1895,7 @@ pre code {
 }
 
 .col-xs-10 {
-    width: 83.33333333%;
+    width: 60%;
 }
 
 .col-xs-9 {
@@ -2067,7 +2075,7 @@ pre code {
 }
 
 .col-xs-offset-3 {
-    margin-left: 25%;
+    margin-left: 20%;
 }
 
 .col-xs-offset-2 {
@@ -2096,7 +2104,7 @@ pre code {
     }
 
     .col-sm-10 {
-        width: 83.33333333%;
+        width: 60%;
     }
 
     .col-sm-9 {
@@ -2104,7 +2112,7 @@ pre code {
     }
 
     .col-sm-8 {
-        width: 66.66666667%;
+        width: 100%;
     }
 
     .col-sm-7 {
@@ -2116,13 +2124,18 @@ pre code {
     }
 
     .col-sm-5 {
-        width: 41.66666667%;
+        width: 60%;
+		display: block;
+		margin-left: 20%;
+		margin-right: 20%;
     }
 
-    .col-sm-4 {
-        width: 33.33333333%;
-    }
-
+     .col-sm-4 {
+	display: block;
+    width: 33.33333333%;
+	margin-left: 33.33333333333%;
+	margin-right: 33.3333333333%;
+  }
     .col-sm-3 {
         width: 25%;
     }
@@ -2276,7 +2289,7 @@ pre code {
     }
 
     .col-sm-offset-3 {
-        margin-left: 25%;
+        margin-left: 20%;
     }
 
     .col-sm-offset-2 {
@@ -3017,6 +3030,11 @@ input[type=search] {
     margin-bottom: 15px;
 }
 
+.form-group1 {
+    margin-bottom: 15px;
+	height: 125px;
+}
+
 .checkbox,.radio {
     position: relative;
     display: block;
@@ -3030,6 +3048,19 @@ input[type=search] {
     margin-bottom: 0;
     font-weight: 400;
     cursor: pointer;
+}
+.radio-toolbarY{
+  
+	color:#66CD00;
+   
+}
+
+.radio-toolbarN{
+      color: #ff0000;
+	  margin-right:-120px;
+	  margin-top: -20px; 
+	  
+  
 }
 
 .checkbox input[type=checkbox],.checkbox-inline input[type=checkbox],.radio input[type=radio],.radio-inline input[type=radio] {

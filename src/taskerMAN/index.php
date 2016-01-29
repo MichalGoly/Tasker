@@ -80,7 +80,8 @@ header("Location: login.php");
         </div> 
         
           <h1 class="page-header"></h1>
-	
+
+
 		 
 		<div class="jumbotron" class="container-fluid">
 			<ol class="breadcrumb">

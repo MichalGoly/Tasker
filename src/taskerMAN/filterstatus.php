@@ -33,6 +33,9 @@ echo "Welcome to the TaskerMAN " . $username;
   <!-- Custom styles for this template -->
   <link href="jumbotron.css" rel="stylesheet">
  
+<!-- Font awesome Style sheet -->
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">    
+
 
   <script src="../../assets/js/ie-emulation-modes-warning.js">
   </script>
@@ -55,9 +58,9 @@ echo "Welcome to the TaskerMAN " . $username;
         </div>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right">
+		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <li>
-              <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php">
-                <img src="img/logout.png"/>
+                <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a> 
             </a> 
             </li>
           </ul>
@@ -80,13 +83,11 @@ echo "Welcome to the TaskerMAN " . $username;
           <div class="jumbotron">
             <ol class="breadcrumb">
             <!-- second nav bar --> 
-              <li>
-                <a href="index.php">Home</a>
-              </li>
+				<li><a href="index.php"><i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
             </ol>
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title">VIEW TASKS</h3>
+                <h3 class="panel-title">View Tasks</h3>
               </div><br>
               <div align="center">
                 <form action="" method="post">

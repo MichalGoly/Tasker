@@ -35,6 +35,9 @@ echo "Your session is running " . $username;
   <link href="jumbotron.css" rel="stylesheet">
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  
+  <!-- Font awesome Style sheet -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <script src="../../assets/js/ie-emulation-modes-warning.js">
   </script>
@@ -44,6 +47,7 @@ echo "Your session is running " . $username;
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   <title>TaskerMAN</title>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
   <div>
@@ -55,12 +59,13 @@ echo "Your session is running " . $username;
           "collapse" type="button"><span class="sr-only">Toggle
           navigation</span> <span class="icon-bar"></span> <span class=
           "icon-bar"></span> <span class="icon-bar"></span></button> <a class=
-          "navbar-brand" href="#">TaskerMAN</a>
+          "navbar-brand" href="http://users.aber.ac.uk/tig/taskerMAN">TaskerMAN</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php">Logout</a>
+            <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
+			<li>
+               <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>
           </ul>
         
@@ -80,36 +85,43 @@ echo "Your session is running " . $username;
           <h1 class="page-header"></h1>
           <div class="jumbotron">
             <ol class="breadcrumb">
-              <li>
-                <a href="index.php">Home</a>
-              </li>
+                <li><a href="editusers.php"><i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
             </ol><br>
 			
 			
-			<table>
-				<thbody>
-					<tr>
+			
+			<div class="form-group1">
+	   			<label class="control-label col-sm-3" for="password"></label>
+      				<div class="col-sm-5">
+			
+				  
+				 <div class="alert alert-danger" align='center'>
+					
 						<?php
 							$id = $_GET['email'];
 								if($id != NULL){
-										echo "Are you sure you want to delete  " . $id . "?";
+										echo "<strong>Are you sure you want to delete   $id ?</strong>";
 
 								}
 						?>
-					</tr>
+					   <BR>
 					<tr>
 						<form role="form" action="" method="POST">
 							<label class="radio-inline">
+							<div class="radio-toolbarY">
 								<input type="radio" name="answer" onclick="javascript: submit()" value="yes">YES
+								
+								
 							</label>
+							
+							<div class="radio-toolbarN">
 							<label class="radio-inline">
-								<input type="radio" name="answer" onclick="javascript: submit()" value="no">NO
+								<input type="radio" name="answer"  onclick="javascript: submit()" value="no">NO
 							</label>
     
 						</form>
-					</tr>
-				</thbody>
-			</table>
+						</div>
+				</div>
             <br>
 			
 			<?php
@@ -129,9 +141,13 @@ echo "Your session is running " . $username;
 			}
 			
 			?>
-            
+            </div>
 			</div> 
+			</div>
+			</div>
             <footer>
+			<br/>
+			<br/>
               <p>&copy; 2015 TaskerMan, Inc.</p>
             </footer>
           </div><!-- /container -->

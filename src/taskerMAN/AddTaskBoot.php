@@ -7,10 +7,6 @@ $username=$_SESSION['name'];
 if(!isset($username))
 {
 header("Location: login.php");
-}else{
-	
-echo "Your session is running " . $username;	
-	
 }
 	
 
@@ -104,6 +100,7 @@ echo "Your session is running " . $username;
 		
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right">
+		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <li>
                <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>
@@ -215,7 +212,7 @@ echo "Your session is running " . $username;
       
 	   <div class="col-sm-5">
              <div class="hero-unit">
-                <input  type="text" class="form-control" name="sDate"  placeholder="Start Date" id="sDate">
+                <input  type="text" class="form-control"  name="sDate" required placeholder="Start Date" id="sDate">
             
         </div>
 		</div>
@@ -226,7 +223,7 @@ echo "Your session is running " . $username;
       
 	   <div class="col-sm-5">
             
-                <input  type="text" class="form-control" name="eDate" placeholder="End Date"   id="eDate">
+                <input  type="text" class="form-control" name="eDate" required placeholder="End Date"   id="eDate">
             </div>
         </div>
 				

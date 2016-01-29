@@ -1,4 +1,18 @@
+<?php
+session_start();
+//session_save_path("/users/tho4/public_html/CS25010/sessions"); 
+error_reporting (E_ALL ^ E_NOTICE);	
+$username=$_SESSION['name'];	
+
+if(!isset($username))
+{
+header("Location: login.php");
+}
+	
+
+?>
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -45,6 +59,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" ng-model="bar">
+		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
 		    <li>
                <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>
@@ -74,7 +89,7 @@
 		  
 	<div class = "panel panel-primary">
    <div class = "panel-heading">
-      <h3 class = "panel-title">VIEW USERS</h3>
+      <h3 class = "panel-title">View Users</h3>
 	
    </div>
    <div class="table-responsive">  
@@ -97,7 +112,7 @@
 
             echo "<tr>";
 
-                 echo "<th> <img src='img/smalluser.png'>    First Name</th>";
+                 echo "<th>     First Name</th>";
 				 //echo "<th>Expected Completion Date</th>";
 			
 			echo "<th>Last Name</th>";
@@ -121,7 +136,7 @@
 	
 			echo "<tr>";
 	 
-			echo "<td>"."<img src='img/smalluser.png'>"."  ".$row["firstName"]."</td>"  ;
+			echo "<td>".$row["firstName"]."</td>"  ;
 	 
 			echo  "<td>".$row["lastName"]. "</td>" ;
 			

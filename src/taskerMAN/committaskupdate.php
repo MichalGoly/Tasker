@@ -59,6 +59,7 @@ echo "Welcome to the TaskerMAN " . $username;
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" ng-model="bar">
+		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
 		    <li>
                <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>
@@ -69,17 +70,17 @@ echo "Welcome to the TaskerMAN " . $username;
     </nav>
 
    
-
+	<div class ="containerCentre">
     <div class="container">
 	<h1 class="page-header"></h1>
 	
 	 <BR><BR><BR>
 		  
- <div class="jumbotron">
+	<div class="jumbotron">
    
-     <ol class="breadcrumb">
+			<ol class="breadcrumb">
 				<li><a href="edittasks.php"><i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
-          </ol>
+			</ol>
          
   <?php
   

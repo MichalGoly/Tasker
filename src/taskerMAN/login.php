@@ -59,7 +59,7 @@ $password=$_POST['password'];
 		 
       }else {
         
-		$error = "hahahaaaa you aint got no password";
+		$error = "Incorrect login details, please try again.";
       }
      
    }
@@ -128,7 +128,7 @@ $password=$_POST['password'];
       <div class="col-sm-9">  
 	<div class = "panel panel-primary">
    <div class = "panel-heading">
-      <h3 class = "panel-title" align="center">WARNING - AUTHORISED ACCESS ONLY</h3>
+      <h3 class = "panel-title" align="center">TaskerMAN Login</h3>
 	
    </div>
    <BR>
@@ -139,7 +139,6 @@ $password=$_POST['password'];
    
    
    <div class="form-group">
-	   <label class="control-label col-sm-4" for="fname"></label>
       <div class="col-sm-8">
 	  <img src="img/login.png">
         
@@ -151,7 +150,6 @@ $password=$_POST['password'];
 	
 	
     			<div class="form-group">
-	   			<label class="control-label col-sm-3" for="username"></label>
      				 <div class="col-sm-5">
         				<input type="text" class="form-control"  name="username"  placeholder="Username" required>
 	
@@ -160,7 +158,6 @@ $password=$_POST['password'];
 	
 	 
 			<div class="form-group">
-	   			<label class="control-label col-sm-3" for="password"></label>
       				<div class="col-sm-5">
         				<input type="password" class="form-control" name="password" placeholder="Password" required>
 	
@@ -169,11 +166,9 @@ $password=$_POST['password'];
 	
 	
 	 		<div class="form-group">
-	   			<label class="control-label col-sm-4" for="submit"></label>
       				<div class="col-sm-4">
-	          			&nbsp;&nbsp;<input  type="submit" value="Authenticate" class="btn btn-primary">
-	
-     				 </div>
+	          			<input  type="submit" value="Authenticate" class="btn btn-primary">
+					</div>
     			</div>
 	
 	 </form>
