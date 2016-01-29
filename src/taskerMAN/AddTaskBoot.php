@@ -24,17 +24,15 @@ header("Location: login.php");
   <link href="../../favicon.ico" rel="icon">
   
   <title>TaskerMAN</title>
-  
-
-
-
-  <script src=
+   <script src=
   "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
   </script>
   <script src=
   "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
   </script>
 
+<!-- Function for add/remove buttons. If add button clicked new input field is added with a limit of 10 input fields. 
+Else , if the remove button selected one input field is removed-->
   <script type="text/javascript">
        $(document).ready(function(){
        var maxField = 10; //Input fields increment limitation
@@ -89,6 +87,7 @@ header("Location: login.php");
       <div class="container">
         <div class="navbar-header">
 		
+		<!-- Code for top navbar --> 
           <button aria-controls="navbar" aria-expanded="false" class=
           "navbar-toggle collapsed" data-target="#navbar" data-toggle=
           "collapse" type="button"><span class="sr-only">Toggle
@@ -102,7 +101,7 @@ header("Location: login.php");
           <ul class="nav navbar-nav navbar-right">
 		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <li>
-               <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
+               <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php">  <!-- Font awesome button--> <i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>
           </ul>
         </div>
@@ -136,7 +135,8 @@ header("Location: login.php");
 				
               </div><br>
               <br>
-			  
+		
+		<!-- Divs to centre form --> 	  
               <form action="processTasks.php" class="form-horizontal" id=
               "form1" method="post" name="form1" role="form">
                 <div class="form-group">
@@ -187,6 +187,7 @@ header("Location: login.php");
                   </div>
                 </div>
                 <div class="form-group">
+                	<!-- Divs for centreing input fields in the form --> 
                   <label class="control-label col-sm-3" for="email"></label>
                   <div class="col-sm-5">
                     <div class="input-group input-group-option col-xs-12">
@@ -206,7 +207,7 @@ header("Location: login.php");
                   </div>
                 </div>
 				
-				<!-- input fields for start and end date --> 
+				<!-- input fields for start(sDate) and end date(eDate) --> 
                 <div class="form-group">
 	   <label class="control-label col-sm-3" for="date"></label>
       
@@ -248,12 +249,13 @@ header("Location: login.php");
     </div>
   </div>
 
+<!-- JS Date-picker function --> 
 <script src="js/bootstrap-datepicker.js"></script>
         <script type="text/javascript">
             // When the document is ready
             $(document).ready(function () {
                 
-                $('#sDate').datepicker({
+                $('#sDate').datepicker({ //sets start date
                     format: "yyyy-mm-dd"
                 });  
             
@@ -263,7 +265,7 @@ header("Location: login.php");
             // When the document is ready
             $(document).ready(function () {
                 
-                $('#eDate').datepicker({
+                $('#eDate').datepicker({ //sets end date
                     format: "yyyy-mm-dd"
                 });  
             
