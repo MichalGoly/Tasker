@@ -1,5 +1,5 @@
-﻿<?php
-
+<?php
+//database log in details
 $servername = "db.dcs.aber.ac.uk:3306";
 $username = "csgpadm_12";
 $password = "RCORoND6";
