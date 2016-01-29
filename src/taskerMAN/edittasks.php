@@ -63,7 +63,7 @@ echo "Welcome to the TaskerMAN " . $username;
                         <li>
                             <a href=
                             "http://users.aber.ac.uk/tig/taskerMAN/logout.php">
-                            	<!- font awesome button->
+                            	<!- font awesome button-->
                             	<i class="fa fa-sign-out"style="font-size:24px;"></i></a>
                         </li>
                     </ul>
