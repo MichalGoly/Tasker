@@ -12,8 +12,6 @@ header("Location: login.php");
 echo "Welcome to the TaskerMAN " . $username;	
 	
 }
-	
-
 ?>
 
 <!DOCTYPE html>
@@ -53,26 +51,31 @@ echo "Welcome to the TaskerMAN " . $username;
         <div class="navbar-header">
           <button aria-controls="navbar" aria-expanded="false" class=
           "navbar-toggle collapsed" data-target="#navbar" data-toggle=
-          "collapse" type="button"><span class="sr-only">Toggle
-          navigation</span> <span class="icon-bar"></span> <span class=
-          "icon-bar"></span> <span class="icon-bar"></span></button> <a class=
+          "collapse" type="button"><span class="sr-only">
+          	
+         Toggle navigation</span> <span class="icon-bar"></span> 
+          <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class=
           "navbar-brand" href="http://users.aber.ac.uk/tig/taskerMAN">TaskerMAN</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right">
 		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <li>
-              <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
+              <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php">
+              	<!-- font awesome button-->
+              	<i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </a> 
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class = "containerCentre"> <!-- centres jumbotron--> 
+    <!-- centres jumbotron--> 
+    <div class = "containerCentre"> 
     <div class="container">
       <div class="row">
         
+        <!-- for line under navbar and spacing -->
           <ul class="nav nav-sidebar"></ul>
           <ul class="nav nav-sidebar">
             <li>
@@ -84,7 +87,9 @@ echo "Welcome to the TaskerMAN " . $username;
           <h1 class="page-header"></h1>
           <div class="jumbotron">
             <ol class="breadcrumb">
-                <li><a href="index.php"><i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
+                <li><a href="index.php">
+                <!-- font awesome button -->
+                <i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
             </ol>
             
             <div class="panel panel-primary">
@@ -104,11 +109,13 @@ echo "Welcome to the TaskerMAN " . $username;
                       STATUS
                     </option>
                   </select> 
+                  
                   <script type="text/javascript">
                   var urlmenu = document.getElementById( 'menu1' );
                   urlmenu.onchange = function() {
                   window.open( this.options[ this.selectedIndex ].value,"_self" );
                   };
+                  
                   </script> <a href="viewtasks.php"><img src=
                   "img/reset3.gif"></a>
                 </form>
