@@ -12,8 +12,7 @@ header("Location: login.php");
 echo "Your session is running " . $username;    
     
 }
-    
-
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">
