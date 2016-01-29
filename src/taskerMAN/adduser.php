@@ -153,7 +153,7 @@ echo "Your session is running " . $username;
                 </div>
               </form>
             </div>
-			</div>
+	</div>
 			
             <footer>
               <p>&copy; 2015 TaskerMan, Inc.</p>
