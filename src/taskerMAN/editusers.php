@@ -12,8 +12,6 @@ header("Location: login.php");
 echo "Welcome to the TaskerMAN " . $username;	
 	
 }
-	
-
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +21,7 @@ echo "Welcome to the TaskerMAN " . $username;
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  
   <meta content="" name="description">
   <meta content="" name="author">
   <link href="../../favicon.ico" rel="icon">
@@ -51,27 +50,28 @@ echo "Welcome to the TaskerMAN " . $username;
 		<!-- Code needed for top nav bar --> 
           <button aria-controls="navbar" aria-expanded="false" class=
           "navbar-toggle collapsed" data-target="#navbar" data-toggle=
-          "collapse" type="button"><span class="sr-only">Toggle
-          navigation</span> <span class="icon-bar"></span> <span class=
-          "icon-bar"></span> <span class="icon-bar"></span></button> <a class=
-          "navbar-brand" href=
-          "http://users.aber.ac.uk/tig/taskerMAN">TaskerMAN</a>
+          "collapse" type="button"><span class="sr-only">
+          Toggle navigation</span> <span class="icon-bar"></span>
+          
+          <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class=
+          "navbar-brand" href="http://users.aber.ac.uk/tig/taskerMAN">TaskerMAN</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right">
 		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <<li>
-               <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
+               <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"> <!-- font awesome button--><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    <!-- to centre the jumbotron -->
 	<div class "containerCentre" >
     <div class="container">
       <div class="row">
 	  
-	  <!-- needed for CSS purpose --> 
+	  <!-- needed for line underneath navbar --> 
           <ul class="nav nav-sidebar"></ul>
           <ul class="nav nav-sidebar">
             <li>
@@ -81,7 +81,6 @@ echo "Welcome to the TaskerMAN " . $username;
         </div>
         
 		<!-- other CSS classes and nav bar --> 
-		
           <h1 class="page-header"></h1>
           <div class="jumbotron">
             <ol class="breadcrumb">
@@ -93,7 +92,8 @@ echo "Welcome to the TaskerMAN " . $username;
               </div>
               <div class="table-responsive">
 			  
-			  <!-- connects to DB, selects and prints all the users in the TeamMember DB, adds an update button to the end of each row. --> 
+			  <!-- connects to DB, selects and prints all the users in the TeamMember DB, adds an update button to the end
+			  of each row. --> 
                 <?php
                         
                         
@@ -164,8 +164,8 @@ echo "Welcome to the TaskerMAN " . $username;
 			
               <p>&copy; 2015 TaskerMan, Inc.</p>
             </footer>
-          </div><!-- /container -->
-          <!-- Bootstrap core JavaScript-->
+          </div><!-- ends container -->
+          
           <!-- Placed at the end of the document so the pages load faster -->
           <script src=
           "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
