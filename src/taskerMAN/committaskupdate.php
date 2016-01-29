@@ -202,6 +202,137 @@ echo "Welcome to the TaskerMAN " . $username;
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+      </div>
+    </nav>
+
+   
+	<div class ="containerCentre">
+    <div class="container">
+	<h1 class="page-header"></h1>
+	
+	 <BR><BR><BR>
+		  
+	<div class="jumbotron">
+   
+			<ol class="breadcrumb">
+				<li><a href="edittasks.php"><i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
+			</ol>
+         
+  <?php
+    
+		$sDate = strip_tags($_POST['sDate']);
+		$eDate = strip_tags($_POST['eDate']);
+	
+		$intlast1 = substr($sDate,8,2);
+		$intlast2 = substr($eDate,8,2);
+
+		$mid1 = substr($sDate,5,2);
+		$mid2 = substr($eDate,5,2);
+
+		$first4one = substr($sDate,0,4);
+		$first4sec = substr($eDate,0,4);
+
+		if(($first4sec <= $first4one) && ($mid2 <= $mid1) &&($intlast2 < $intlast1)){
+			
+					echo "<div class='alert alert-danger' align='center'>.";
+					echo $first4sec."-".$mid2."-".$intlast2;
+                    echo "<strong> <BR><BR>DATE ERROR - COMPLETION DATE CANNOT BE BEFORE START DATE";
+                    echo "<BR><BR><BR><a href='edittasks.php'><font color = 'red'>TRY AGAIN</color></a>";
+                    echo "</strong>";
+                    echo "</div>";
+		}else{
+	
+	
+				include 'connector.php';
+
+				$required = array('title','sDate','eDate','mEmail');
+				$error = false;
+				foreach($required as $field) {
+					if (empty($_POST[$field])) {
+						$error = true;
+					}
+				}
+
+				if ($error) {
+					echo "All fields are required.";
+				} 
+ 
+				if (isset($_POST['tStatus'])&& $_POST['tStatus']=='0'){
+					$setStatusTo1 = 2;		
+				}	else{
+					$setStatusTo1 = 1;	
+				}
+
+				$title = strip_tags($_POST['title']);			
+
+				$task = "UPDATE Task SET 
+				title = '$title',
+				startDate = '$_POST[sDate]',
+				endDate = '$_POST[eDate]',
+				taskStatus = '$setStatusTo1',
+				TeamMember_email = '$_POST[mEmail]'
+				WHERE taskId = '$_POST[id]'";       
+
+				if($connection->query($task)===TRUE){
+					$earray =$_POST['eid'];
+					$array =  $_POST['tDescription'];
+					$combine = array_combine($earray, $array);
+		
+
+				foreach($combine as $key => $value){
+					$element = "UPDATE TaskElement SET
+								description = '$value'
+								WHERE taskElementId = '$key'";
+			
+		 		if($connection->query($element)===TRUE){
+					echo "<div class='alert alert-success'>.";
+					echo "<strong><img src='img/AddTaskd.png'> <BR><BR>SUCCESSFULLY UPATED ";
+					echo "<BR><BR><BR><a href='edittasks.php'>UPDATE ANOTHER TASK</a>";
+					echo "</strong>";
+					echo "</div>";
+				}
+		 }	
+		 
+		 
+
+		}else{
+				echo "<div class='alert alert-danger'>.";
+				echo " <strong><img src='img/warninguser.png'> <BR><BR>ERROR - $connection->error.";
+				echo "<BR><BR><BR><a href='adduser.php'>TRY AGAIN</a>";
+				echo "</strong>";
+				echo "</div>";
+		}
+	}
+
+?>
+
+<?php
+
+include 'connector.php';
+
+	$arraynull = $_POST['tDescription1'];
+    $newelement= array_filter($arraynull);
+			foreach($newelement as $value){
+					$element = "INSERT INTO TaskElement (description, Task_taskId)
+								VALUES ('$value',(SELECT taskId FROM Task WHERE title = '$_POST[title]'))";
+					
+			
+				if($connection->query($element)===TRUE){
+					echo "<div class='alert alert-success'>.";
+					echo "<strong><img src='img/AddTaskd.png'> <BR><BR>SUCCESSFULLY ADDED new element ";
+					echo "<BR><BR><BR><a href='AddTaskBoot.php'>ADD ANOTHER TASK</a>";
+					echo "</strong>";
+					echo "</div>";
+				}
+			}
+	
+$connection->close();	
+?>
+
+</div>
+=======
     </div>
+>>>>>>> ba7b42dd3d26aeb6b0ff41bbf5b358bc0860f9a4
 </body>
 </html>
