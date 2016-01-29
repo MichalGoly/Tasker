@@ -30,7 +30,7 @@ echo "Welcome to the TaskerMAN " . $username;
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   
-  "stylesheet"><!-- Custom styles for this template -->
+  <!-- Custom styles for this template -->
   <link href="jumbotron.css" rel="stylesheet">
  
    <!-- Font awesome Style sheet -->
@@ -62,6 +62,7 @@ echo "Welcome to the TaskerMAN " . $username;
 		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <li>
               <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php">
+              	
               	<!-- font awesome button-->
               	<i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </a> 
@@ -87,8 +88,9 @@ echo "Welcome to the TaskerMAN " . $username;
           <h1 class="page-header"></h1>
           <div class="jumbotron">
             <ol class="breadcrumb">
-                <li><a href="index.php">
-                <!-- font awesome button -->
+               
+               <li><a href="index.php">
+                 <!-- font awesome button -->
                 <i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
             </ol>
             
@@ -105,6 +107,7 @@ echo "Welcome to the TaskerMAN " . $username;
                     <option selected value="filtermember.php">
                       MEMBER
                     </option>
+                    
                     <option value="filterstatus.php">
                       STATUS
                     </option>
@@ -203,11 +206,10 @@ echo "Welcome to the TaskerMAN " . $username;
             <footer>
               <p>&copy; 2015 TaskerMan, Inc.</p>
             </footer>
-          </div><!-- /container -->
+          </div><!-- end of container div -->
           
           <!-- Placed at the end of the document so the pages load faster -->
-          <script src=
-          "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
           </script> 
           <script>
           window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
