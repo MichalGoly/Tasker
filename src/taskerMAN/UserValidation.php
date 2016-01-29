@@ -1,3 +1,4 @@
+<!-- File to validate forms which is loaded in  to other files -->
 <?php
     if (isset($_POST["submit"])) {
         $fname = $_POST['fname'];
