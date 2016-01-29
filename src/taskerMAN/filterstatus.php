@@ -27,7 +27,8 @@ echo "Welcome to the TaskerMAN " . $username;
   <meta content="" name="description">
   <meta content="" name="author">
   <link href="../../favicon.ico" rel="icon">
-  <title>TaskerMAN</title><!-- Bootstrap core CSS -->
+  <title>TaskerMAN</title>
+  <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   
   <!-- Custom styles for this template -->
@@ -52,10 +53,12 @@ echo "Welcome to the TaskerMAN " . $username;
           <button aria-controls="navbar" aria-expanded="false" class=
           "navbar-toggle collapsed" data-target="#navbar" data-toggle=
           "collapse" type="button"><span class="sr-only">Toggle
-          navigation</span> <span class="icon-bar"></span> <span class=
-          "icon-bar"></span> <span class="icon-bar"></span></button> <a class=
+          navigation</span> <span class="icon-bar"></span>
+         
+          <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class=
           "navbar-brand" href="http://users.aber.ac.uk/tig/taskerMAN">TaskerMAN</a>
         </div>
+        
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right">
 		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
@@ -67,10 +70,13 @@ echo "Welcome to the TaskerMAN " . $username;
         </div>
       </div>
     </nav>
-    <div class = "containerCentre"> <!-- jumbotron centre --> 
+    
+     <!-- centre's jumbotron -->
+    <div class = "containerCentre"> 
     <div class="container">
       <div class="row">
        
+       <!-- ads line under navbar and spacing --> 
           <ul class="nav nav-sidebar"></ul>
           <ul class="nav nav-sidebar">
             <li>
@@ -82,8 +88,11 @@ echo "Welcome to the TaskerMAN " . $username;
           <h1 class="page-header"></h1>
           <div class="jumbotron">
             <ol class="breadcrumb">
-            <!-- second nav bar --> 
-				<li><a href="index.php"><i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
+            <!-- second nav bar (breadcrumb) --> 
+	
+	<li><a href="index.php">
+		<!-- font awesome button-->
+		<i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
             </ol>
             <div class="panel panel-primary">
               <div class="panel-heading">
@@ -97,6 +106,7 @@ echo "Welcome to the TaskerMAN " . $username;
                     <option selected value="filterstatus.php">
                       STATUS
                     </option>
+                    
                     <option value="filtermember.php">
                       MEMBER
                     </option>
@@ -144,13 +154,6 @@ echo "Welcome to the TaskerMAN " . $username;
                             echo "<th>Expected Completion Date</th>";
                             
                             
-
-                                    
-                                
-                            
-
-                           
-
                                     echo "</tr>";
 
                             echo "</thead>";
@@ -204,7 +207,7 @@ echo "Welcome to the TaskerMAN " . $username;
             <footer>
               <p>&copy; 2015 TaskerMan, Inc.</p>
             </footer>
-          </div><!-- /container -->
+          </div><!-- end of container -->
          
           <!-- Placed at the end of the document so the pages load faster -->
           <script src=
