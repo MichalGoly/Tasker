@@ -8,24 +8,17 @@ if(!isset($username))
 {
 header("Location: login.php");
 }
-	
-
 ?>
-
 <?php
-
-
 $id = $_GET['taskId'];
-include 'connector.php';
-
-
-
+include 'connector.php'; //connects to DB
 
 $sql= "SELECT * FROM Task WHERE
 taskId = '$id'";
 $result = $connection->query($sql);
 
 if($result->num_rows > 0){
+	//gets all the rows
 	while($row = $result->fetch_assoc()){
 	$title = $row['title'];
 	$email = $row['TeamMember_email'];
@@ -49,6 +42,7 @@ $connection->close();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
@@ -84,47 +78,40 @@ $(document).ready(function(){
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
 	
 	<!-- Font awesome Style sheet -->
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-	
 	<link rel="stylesheet" href="css/datepicker.css">
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
   
    <div ng-app="">
+   	<!-- navbar code -->
       <title>TaskerMAN</title ng-bind="title"> 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          
           <a class="navbar-brand" href="http://users.aber.ac.uk/tig/taskerMAN">TaskerMAN</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" ng-model="bar">
 		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <li>
-               <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
+               <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php">
+               	<!-- font awesome button --> 
+               	<i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>
           </ul>
           
@@ -132,12 +119,13 @@ $(document).ready(function(){
       </div>
     </nav>
 
-   
+   <!-- centre the jumbotron -->
     <div class="containerCentre">
     <div class="container">
 	
 	 <div class="row">
         
+        <!-- for line under nav bar --> 
           <ul class="nav nav-sidebar" ng-bind="bar">
           </ul>
           <ul class="nav nav-sidebar" ng-init="list=['Home','Users','Tasks','Logout']" ng-model="current">
@@ -149,7 +137,9 @@ $(document).ready(function(){
           <h1 class="page-header"></h1>
 		   <div class="jumbotron">
 		  	<ol class="breadcrumb">
-				<li><a href="edittasks.php"><i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
+				<li><a href="edittasks.php">
+					<!-- font awesome button --> 
+					<i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
   				
  
 			</ol>
@@ -166,6 +156,7 @@ $(document).ready(function(){
 	
 	
     <div class="form-group">
+    	<!-- input field for title -->
 	   <label class="control-label col-sm-3" for="email"></label>
       <div class="col-sm-5">
         <input type="type" class="form-control" id="title" name="title" value="<?php echo "$title"; ?>" required>
@@ -176,13 +167,15 @@ $(document).ready(function(){
 	
 	
 	 <div class="form-group">
+	 	<!-- input field for email --> 
 	   <label class="control-label col-sm-3" for="email"></label>
       <div class="col-sm-5">
       
 		<select class="form-control" id="mEmail" name="mEmail""><option name='member'><?php echo "$email"; ?> </option>
 		
 		<?php
-		
+		// to provide a drop-down to select email
+		// selects all emails and prints them out
 			include 'connector.php';
 		
 			$sql = "SELECT email FROM TeamMember";
@@ -200,10 +193,7 @@ $(document).ready(function(){
 			}	
 			
 			?>
-
-	    
-    
-  </select>
+	      </select>
       </div>
     </div>
     
@@ -245,7 +235,7 @@ $(document).ready(function(){
 	
 	
 	
-	<!-- input field for email --> 
+	
  <div class="form-group">
 	   <label class="control-label col-sm-3"  for="email"> </label>
       <div class="col-sm-5">
@@ -254,6 +244,7 @@ $(document).ready(function(){
 	 <div class="field_wrapper">
 		<div>
 	
+	<!-- code for add button --> 
        <input type="text"   class="form-control" name="tDescription1[]" id="d_new" placeholder="Enter Element" > 
 		<a href="javascript:void(0);" class="add_button"  title="Add field"><img src="img/1add.png"/></a>
 		</div>
@@ -274,10 +265,10 @@ $(document).ready(function(){
     </div>      
 
 	
-	
-<div class="form-group">
-	   <label class="control-label col-sm-3" for="email"></label>
-      <div class="col-sm-5">
+	<!-- End date input field --> 
+	<div class="form-group">
+	<label class="control-label col-sm-3" for="email"></label>
+        <div class="col-sm-5">
         <input type="text" class="form-control"  name="eDate" value="<?php echo "$eDate"; ?>" id="eDate1">
       </div>
     </div>
@@ -298,6 +289,7 @@ $(document).ready(function(){
 	<p><input type="hidden" name="id"  value="<?php echo "$id"; ?>" /> </p>
 	<div class="form-group">
 	  
+	  <!-- update task button -->
 	<div class="col-xs-offset-3 col-xs-10">
             <button type="submit" class="btn btn-primary">UPDATE TASK</button>
         </div>
@@ -308,7 +300,7 @@ $(document).ready(function(){
       <footer>
         <p>&copy; 2015 TaskerMan, Inc.</p>
       </footer>
-    </div> <!-- /container -->
+    </div> <!-- ends container div -->
 
 
   
@@ -317,6 +309,7 @@ $(document).ready(function(){
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>
 
+<!-- datepicker javascript function -->
    <script src="js/bootstrap-datepicker.js"></script>
         <script type="text/javascript">
             // When the document is ready
