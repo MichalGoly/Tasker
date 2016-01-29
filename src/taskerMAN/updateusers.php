@@ -10,7 +10,6 @@ header("Location: login.php");
 }else{
 	
 echo "Welcome to the TaskerMAN " . $username;	
-	
 }
 	
 
@@ -19,13 +18,8 @@ echo "Welcome to the TaskerMAN " . $username;
 <!-- Selects user data and displays it for the user that was 
 clicked on.  -->
 <?php
-
-
 $id = $_GET['email'];
 include 'connector.php';
-
-
-
 
 $sql= "SELECT * FROM TeamMember WHERE
 email = '$_GET[email]'";
@@ -87,13 +81,16 @@ $connection->close();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          
           <a class="navbar-brand" href="http://users.aber.ac.uk/tig/taskerMAN">TaskerMAN</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" ng-model="bar">
 		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
 		    <li>
-               <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a>
+               <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php">
+               	<!-- font awesome button-->
+               	<i class="fa fa-sign-out" style="font-size:24px;"></i></a>
             </li>
           </ul>
           
@@ -101,14 +98,16 @@ $connection->close();
       </div>
     </nav>
 
-   
-    <div class ="containerCentre">     <!-- cntres jumbotron --> 
+   <!-- centres jumbotron --> 
+    <div class ="containerCentre">     
     <div class="container">
 	
 	 <div class="row">
         
+        <!-- adds a line under the navbar and spaces it --> 
           <ul class="nav nav-sidebar" ng-bind="bar">
           </ul>
+          
           <ul class="nav nav-sidebar" ng-init="list=['Home','Users','Tasks','Logout']" ng-model="current">
             <li ng-repeat="x in list"><a href="#{{x}}">{{x}}</a></li>
           </ul>
@@ -118,7 +117,9 @@ $connection->close();
           <h1 class="page-header"></h1>
 		   <div class="jumbotron">
 		  	<ol class="breadcrumb">
-				<li><a href="editusers.php"><i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
+				<li><a href="editusers.php">
+				<!-- font awesome button-->
+				<i class="fa fa-chevron-circle-left" style="font-size:24px;"></i></a></li>
 			</ol>
 		  
 	<div class = "panel panel-primary">
@@ -132,8 +133,7 @@ $connection->close();
 	      <form class="form-horizontal" role="form"  action="commituserupdate.php"  method="POST">
   
 	      <!-- First name input field --> 
-	      
-    <div class="form-group">
+	       <div class="form-group">
 	   <label class="control-label col-sm-3" for="fname"></label>
       <div class="col-sm-5">
         <input type="text" class="form-control" id="fname" name="fname" placeholder="First name" value ="<?php echo "$fname"; ?>" required >
@@ -150,8 +150,6 @@ $connection->close();
       </div>
     </div>
 	
-	
-	 
 	<!-- Password input field --> 
 	 <div class="form-group">
 	   <label class="control-label col-sm-3" for="password"> </label>
@@ -170,13 +168,10 @@ $connection->close();
         <div class="col-sm-10 col-sm-offset-3">
             <input id="submit" name="submit" type="submit" value="Update User" class="btn btn-primary">
         </div>
-    </div>
-	
-	
-	
-</div>
-</div>
-	</form>
+         </div>
+          </div>
+           </div>
+  	</form>
 
       <footer>
         <p>&copy; 2015 TaskerMan, Inc.</p>
