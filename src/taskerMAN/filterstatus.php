@@ -12,8 +12,6 @@ header("Location: login.php");
 echo "Welcome to the TaskerMAN " . $username;	
 	
 }
-	
-
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +26,7 @@ echo "Welcome to the TaskerMAN " . $username;
   <meta content="" name="author">
   <link href="../../favicon.ico" rel="icon">
   <title>TaskerMAN</title>
+ 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   
@@ -36,7 +35,6 @@ echo "Welcome to the TaskerMAN " . $username;
  
 <!-- Font awesome Style sheet -->
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">    
-
 
   <script src="../../assets/js/ie-emulation-modes-warning.js">
   </script>
@@ -52,8 +50,10 @@ echo "Welcome to the TaskerMAN " . $username;
         <!-- Navbar Css code --> 
           <button aria-controls="navbar" aria-expanded="false" class=
           "navbar-toggle collapsed" data-target="#navbar" data-toggle=
-          "collapse" type="button"><span class="sr-only">Toggle
-          navigation</span> <span class="icon-bar"></span>
+          "collapse" type="button">
+          	
+          <span class="sr-only">Toggle navigation</span> 
+          <span class="icon-bar"></span>
          
           <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class=
           "navbar-brand" href="http://users.aber.ac.uk/tig/taskerMAN">TaskerMAN</a>
@@ -63,7 +63,9 @@ echo "Welcome to the TaskerMAN " . $username;
           <ul class="nav navbar-nav navbar-right">
 		  <li><a href="#" ><?php echo "Logged in as ". $username;?></a></li>
             <li>
-                <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php"><i class="fa fa-sign-out" style="font-size:24px;"></i></a> 
+                <a href="http://users.aber.ac.uk/tig/taskerMAN/logout.php">
+                	<!-- font awesome button -->
+                	<i class="fa fa-sign-out" style="font-size:24px;"></i></a> 
             </a> 
             </li>
           </ul>
