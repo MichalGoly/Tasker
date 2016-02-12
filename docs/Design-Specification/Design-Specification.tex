@@ -1,5 +1,5 @@
 \documentclass{project}
-\usepackage[pdfauthor={L Jones},pdftitle={Software Engineering Group Project, IDesign Specification},pdftex]{hyperref}
+\usepackage[pdfauthor={L Jones},pdftitle={Software Engineering Group Project, Design Specification},pdftex]{hyperref}
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
 \graphicspath{ {images} }
@@ -10,7 +10,7 @@
 \shorttitle{Design Specification}
 \version{1.7}
 \status{Release}
-\date{2015-11-27}
+\date{2016-02-12}
 \configref{SE-12-DS}
 \maketitle
 \tableofcontents
@@ -97,16 +97,17 @@ The TaskerCLI use-case diagram above depicts how TaskerCLI will be used by "acto
 \end {enumerate}	
 \subsection{User Interface design}
 \subsubsection{TaskerMAN Interface Design} 
+\includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANAuthentication} \\
+This is the authentication page of our website with the address `/taskerMAN/login.php'. Upon attempting to enter any page of the website, should a local session not exist users will be redirected to this page where they will be required to enter their login credentials. If the credentials entered are incorrect then the screen will simply refresh, and the fields will appear blank again. If the credentials are correct then the user will be redirected to the home page of the website. If at any point in the user's session they click the logout icon in the top right of any of the website's pages, the session will be destroyed and they will be redirected back to this authentication page.\\~\\
+\newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANHomePage} \\
-This is the home page of the web interface, it is very easy to use and presents you with six options which provides very quick access to all aspects of the Tasker. To begin we will click on the 'Add User' button. This will re-direct us to the 'Add Team Member' page. \\~\\
+This is the home page of the web interface with the address `/taskerMAN/index.php', it is very easy to use and presents you with six options which provides very quick access to all aspects of the Tasker. To begin we will click on the `Add Users' button. This will re-direct us to the `Add User' page. \\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANAddUser} \\
-Here within the 'Add Team Member' page you will be presented with the form above which then enables you to create a user by presenting their name and e-mail. Upon pressing the 'Add member' button the new member will be added to the database as required \cite{se.qa.rs fr3}. Clicking on the 'backwards arrow' in the top-left corner allows users to return to the home page. In fact the 'backwards arrow' exists within all of the sites internal pages and serves the same function of returning to the home page. \\~\\
+Here within the `Add User' page with the address `/taskerMAN/adduser.php', you will be presented with the form above which enables you to create a user by submitting their name, e-mail and password. Upon pressing the `Add User' button the new member will be added to the database as required \cite{se.qa.rs}. Clicking on the `backwards arrow' in the top-left corner allows users to return to the home page. In fact the `backwards arrow' exists within all of the sites internal pages, and has the same function as clicking on the `TaskerMAN' logo in the top-left corner which is to return to the website's home page.\\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANEditUser} \\
-To update or delete user data as required \cite{se.qa.rs fr3} click on the 'Edit User' button from the home page and you will be presented with this page, displaying users' names, e-mail addresses and options to update/delete, clicking 'update' re-directs to a page with the same interface as the 'Add Team Member' page where name and e-mail can be updated, clicking 'delete' will prompt the user to verify with a 'confirm'/'cancel' option that they are sure they want to proceed, before re-directing them to a page confirming their deletion and a delete command will be submitted to the database to remove the user from the database. \\~\\
-\newline
-\includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANAddTask} \\
+To update or delete user data as required \cite{se.qa.rs} click on the `Edit Users' button from the home page and you will be presented with this page with the address `/taskerMAN/editusers.php', displaying user's names, e-mail addresses and options to update/delete their information, clicking on the `update' icon of a user re-directs to a page with the address `/taskerMAN/updateusers.php' which has the same interface as the 'Add Users' page where name and password can be updated, clicking `delete' will prompt the user to verify with an `are you sure you want to delete this user?' message with buttons for `yes' and `no'. Clicking on `no' will redirect the user back to GPoption that they are sure they want to proceed, before re-directing them to a page confirming their deletion and a delete command will be submitted to the database to remove the user from the database. \\~\\\includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANAddTask} \\
 Clicking 'Add Task' from the home page will re-direct to the task portal, This is where people can make tasks which will then be submitted to specific users \cite{se.qa.rs fr4}. This task portal layout will also be used when updating tasks. 'Title' and 'Title Description' will be text boxes for user input, 'Start Date' and 'End Completion Date' are currently also text boxes, however to improve validation we may add a drop down calendar at both dates. The 'Member's Assigned' box contains a drop-down list of all the members currently added so it makes it easy to assign or re-assign people to specific tasks \cite{se.qa.rs fr5}. 'Status' is also a drop-down list that can be changed between 'Allocated', 'Abandoned' \cite{se.qa.rs fr6}, 'Completed' and 'Not allocated'. The commit to database button then adds the task to the database and will then sync up with the client, a confirmation screen is then shown to show the user that the task has been successfully added. \\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerMANViewTask} \\
@@ -264,9 +265,6 @@ N. W. Hardy, SE.QA.RS. 1.1 Release.
 \bibitem{se.qa.rs fr8 local storage} \emph{Software Engineering Group Projects}
 Requirements Specifications.
 N. W. Hardy, SE.QA.RS, FR8 \emph{Local Storage of Tasks}. 1.1 Release.
-\bibitem{se.qa.rs fr3} \emph{Software Engineering Group Projects}
-Requirements Specifications.
-N. W. Hardy, SE.QA.RS, FR3. 1.1 Release.
 \bibitem{se.qa.rs fr4} \emph{Software Engineering Group Projects}
 Requirements Specifications.
 N. W. Hardy, SE.QA.RS, FR4. 1.1 Release.
