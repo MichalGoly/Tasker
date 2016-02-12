@@ -154,18 +154,16 @@ The LOGOUT sub component is shown as requiring a session established after the L
 \clearpage
 \section{Significant Classes} 
 \subsection{TaskerCLI Significant Classes}
-  \includegraphics[width=0.75\textwidth, center]{images/Detailed-Design/image1.jpg}
+\includegraphics[width=\textwidth]{images/Detailed-Design/taskerCLI_design1.png}
 
   We are using the Data Access Object design pattern, to abstract our database contents and more easily access it from within the Java client.
-  We have abstracted our database tables into Java entities, as an example, in the image above TaskElement.java corresponds to the TaskElement table in the databases.
-  
-  
-  
-  \includegraphics[width=1\textwidth, center]{images/Detailed-Design/image2.jpg}
-  
-  In order to access the abstracted data from the database we use a selection of data access classes:
+  We have abstracted our database tables into Java entities, as an example, in the image below TaskElement class corresponds to the 
+  TaskElement table in the databases.
+  In order to access the abstracted data from the database we use a selection of data access classes (see below).
   These classes apply the DAO pattern, and call methods in order to send properly formatted SQL queries to the appropriate database, and present the result of the queries in the form of the previously described entities. 
   This object is then used by the UI classes in order to generate the view.
+  
+  \includegraphics[width=\textwidth]{images/Detailed-Design/taskerCLI_design2.png}
 
   \subsubsection{Description of each significant Class}
 
