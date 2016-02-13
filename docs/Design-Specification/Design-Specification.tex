@@ -50,7 +50,7 @@ TaskerMAN will be deployed as a PHP web application onto an Apache web server
 and it will be accessible from the Internet by any client with an installed web 
 browser. Finally, TaskerCLI will be a desktop application written in Java, and it
 will be deployed as a runnable jar onto a machine running the Java Runtime
-Environment. Following the requirements specification\cite{se.qa.rs fr8 local storage}, TaskerCLI will have to
+Environment. Following the requirements specification\cite{se.qa.rs}, TaskerCLI will have to
 operate both on-line and off-line. Therefore it will have a direct access to 
 a local storage provided by the SQLite database.
 \subsection{Applications interface}
@@ -124,16 +124,16 @@ From the home page of the website clicking on `View Users' will display the view
 
 \subsubsection{TaskerCLI Interface Design} 
 \includegraphics[width=0.5\textwidth, center]{images/5.2/TaskerCLILogin} \\
-The login screen, the first screen to appear when the client loads. TaskerCLI does not synchronise with the database until the user has logged in as specified in Requirements Specifications.\cite{se.qa.rs fr8 user id} \\~\\
+The login screen, the first screen to appear when the client loads. TaskerCLI does not synchronise with the database until the user has logged in as specified in Requirements Specifications.\cite{se.qa.rs} \\~\\
 \newline
 \includegraphics[width=0.5\textwidth, center]{images/5.2/TaskerCLILoading} \\
-The synchronisation screen occurs between the login and main client page. As per the requirements specifications \cite{se.qa.rs fr11} this screen will also occur before and after local editing if network access is available, as well as occurring every 5 minutes by default should no local editing take place. This will display the relevant information from the database as it's downloading the data. Ideally this will be a fast enough task that this screen should be seen for as little time as possible. \\~\\
+The synchronisation screen occurs between the login and main client page. As per the requirements specifications \cite{se.qa.rs} this screen will also occur before and after local editing if network access is available, as well as occurring every 5 minutes by default should no local editing take place. This will display the relevant information from the database as it's downloading the data. Ideally this will be a fast enough task that this screen should be seen for as little time as possible. \\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerCLIMainScreen} \\
-The 'Main Screen' of TaskerCLI. It shows a list of tasks assigned to the person who signed in, as well as options for sorting and searching through the list. Clicking on the 'Log Out' button will re-direct the user back to the login authentication screen. Double clicking a task's panel, or selecting a task and clicking the 'open task' button shows more detail about the task \cite{se.qa.rs fr10}, as well as the editable parts, such as the completed/allocated attribute and the sub-task list comments. In this example we'll double-click on the "Build Database" task. \\~\\
+The 'Main Screen' of TaskerCLI. It shows a list of tasks assigned to the person who signed in, as well as options for sorting and searching through the list. Clicking on the 'Log Out' button will re-direct the user back to the login authentication screen. Double clicking a task's panel, or selecting a task and clicking the 'open task' button shows more detail about the task \cite{se.qa.rs}, as well as the editable parts, such as the completed/allocated attribute and the sub-task list comments. In this example we'll double-click on the "Build Database" task. \\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerCLITaskInfo} \\
-This screen shows more details about the "Build Database". It displays all the task's information and allows the user to edit task step comments and change task's status \cite{se.qa.rs fr10}. \\~\\
+This screen shows more details about the "Build Database". It displays all the task's information and allows the user to edit task step comments and change task's status \cite{se.qa.rs}. \\~\\
 \newline
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerCLITaskUpdated} \\
 In this image we've changed the status to 'Completed'. We can press the 'Return to List' button to return to the 'Main Screen'. Doing so will prompt the synchronisation screen to appear and an attempt will be made to connect to the network and update the information on the remote MySQL database. If unsuccessful the user will still be re-directed back to the 'Main Screen', however the client will be now operating locally using the local SQLite database until a connection with the MySQL can be re-established.\\~\\
@@ -144,7 +144,7 @@ Note the changes made are now reflected in this list. Also note that the task na
 \includegraphics[width=0.75\textwidth, center]{images/5.2/TaskerCLIMainScreenSearch} \\
 Searching using the text box searches for the string provided in the task's name, and/or it's sub-tasks. Also note that the 'return to full list' button is only selectable if there is currently a search parameter in the search box.\\~\\
 \newline
-There is a large focus on designing the interfaces of both TaskerCLI and TaskerMAN to be intuitive to regular computer users \cite{se.qa.rs ir1}.
+There is a large focus on designing the interfaces of both TaskerCLI and TaskerMAN to be intuitive to regular computer users \cite{se.qa.rs}.
 \clearpage
 \section{Component Description}
 \subsection{TaskerMAN Component Description}
@@ -269,28 +269,7 @@ Design Specification Standards.
 C. J. Price, N.W.Hardy and B.P.Tiddeman, SE.QA.05A. 1.8 Release.
 \bibitem{se.qa.rs} \emph{Software Engineering Group Projects}
 Requirements Specifications.
-N. W. Hardy, SE.QA.RS. 1.1 Release.
-\bibitem{se.qa.rs fr8 local storage} \emph{Software Engineering Group Projects}
-Requirements Specifications.
-N. W. Hardy, SE.QA.RS, FR8 \emph{Local Storage of Tasks}. 1.1 Release.se.qa.rs
-\bibitem{se.qa.rs fr5} \emph{Software Engineering Group Projects}
-Requirements Specifications.
-N. W. Hardy, SE.QA.RS, FR5. 1.1 Release.
-\bibitem{se.qa.rs fr6} \emph{Software Engineering Group Projects}
-Requirements Specifications.
-N. W. Hardy, SE.QA.RS, FR6. 1.1 Release.
-\bibitem{se.qa.rs fr8 user id} \emph{Software Engineering Group Projects}
-Requirements Specifications.
-N. W. Hardy, SE.QA.RS, FR8 \emph{User Identification}. 1.1 Release.
-\bibitem{se.qa.rs fr11} \emph{Software Engineering Group Projects}
-Requirements Specifications.se.qa.rs
-N. W. Hardy, SE.QA.RS, FR11. 1.1 Release.
-\bibitem{se.qa.rs fr10} \emph{Software Engineering Group Projects}
-Requirements Specifications.
 N. W. Hardy, SE.QA.RS, FR10. 1.1 Release.
-\bibitem{se.qa.rs ir1} \emph{Software Engineering Group Projects}
-Requirements Specifications.
-N. W. Hardy, SE.QA.RS, IR1. 1.1 Release.
 \end{thebibliography}
 \clearpage
 \addcontentsline{toc}{section}{DOCUMENT HISTORY}
