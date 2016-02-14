@@ -180,8 +180,9 @@ The LOGOUT sub component is shown as requiring a session established after the L
   		\item \textbf{TaskDB} class is very similliar to the previously described \textbf{TeamMemberDB} class. It also is a part of the DAO pattern and provides direct access to the information stored in the task table in both databases. It will be typically only used by the previosuly mentioned \textbf{TeamMemberDB} to construct the complete \textbf{TeamMember} object.
   		\item \textbf{TaskElementDB} class is basically the same as the previous one, but it enables the access to the TaskElement table in both databases.
   		\item \textbf{ConnectionManager} class can be used to actually connect to both databases. It enables the caller to acquire a \texttt{Connection} object to either the remote MySQL (TaskerSRV), or locally run SQLite. \textbf{ConnectionManager} is capable of registering appropriate JDBC drivers depending on the connection required. 
-        \item \textbf{Syncer} class contains the logic for conflict resolution between the contents of the two databases within its \texttt{sync} method. The sync method takes two \textbf{TeamMember} objects, generates a canonical TeamMember object, which is supplied to the databases and UI. The Syncer class also contains the \texttt{login} method, displaying a dialog for user login and returning an appropriate \textbf{TeamMember} object.
-        class also contains a \textbf{Timer} object used to invoke syncing at regular intervals.
+        \item \textbf{Syncer} class contains the logic for conflict resolution between the contents of the two databases within its \texttt{merge} method. The merge method takes two \textbf{TeamMember} objects, generates a canonical TeamMember object, which is supplied to the databases and UI; the merge method is called via the \textbf{sync} method, which loads the \textbf{progressBar}, and sets the status of the \textbf{onlineIndicator}. The Syncer class also contains the \texttt{login} method, displaying a dialog for user login, authenticaring using the \textbf{Authenticator} class and returning an appropriate \textbf{TeamMember} object.
+        \item \textbf{TimerManager} Class used to invoke \textbf{sync} at regular intervals.
+        \item \textbf{Authenticator}  provides a static method to provide functionality to the \textbf{login} method to check passwords. Using BCrypt the passwords are hashed to keep them secure, and are encrypted in the databases. 
         \item \textbf{TaskerCLI} class is the main class that is run when the application begins. It calls the \textbf{Syncer} classes \texttt{login} method and passes the returned \textbf{TeamMember} onto the UI Classes.
         \item \textbf{MainFrame} extends \textbf{JFrame} class is the primary view after the login menu, and displays a \textbf{TeamMember} object's Tasks in a sortable JTable, clicking on this invokes \textbf{TaskFrame}. Also displays \textbf{SidebarPanel}.
         \item \textbf{SidebarPanel} extends \textbf{JFrame} class is used for controls within \textbf{SidebarPanel}, such as logging out and searching tasks.
@@ -293,6 +294,8 @@ Version & CCF No. & Date & Changes made to Document & Changed by \\
 1.6 & N/A & 2015-11-27 & Compiled team's  Component Description, Significant Classes and Detailed Design sections for release & L. Jones \\
 \hline
 1.7 & N/A & 2015-11-27 & Added TaskerSRV diagram and updated the TaskerCLI sequence diagram narrative for release & M. Goly \\
+\hline
+1.8 & N/A & 2016-02-14 & Updated Java significant classes based on implementation changes for release & J. Mir \\
 \hline
 \end{tabular}
 \label{thelastpage}
