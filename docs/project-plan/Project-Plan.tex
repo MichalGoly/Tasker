@@ -1,16 +1,17 @@
 \documentclass{project}
 \usepackage[pdfauthor={N. W. Hardy},pdftitle={Software Engineering Group Project, LaTeX Document Example},pdftex]{hyperref}
 \usepackage{graphicx}
+\usepackage{longtable}
 \graphicspath{ {images/} }
 \begin{document}
 \title{Software Engineering Group Project}
 \subtitle{Project Plan}
 \author{Luke Jones}     
 \shorttitle{LaTeX}
-\version{1.0}
-\status{Draft}
-\date{2015-10-21}
-\configref{SE-12-PM-01}
+\version{1.2}
+\status{Release}
+\date{2016-02-14}
+\configref{SE-12-PM}
 \maketitle
 \tableofcontents
 \newpage
@@ -29,31 +30,38 @@ The objectives of this document are as follows:
 	\item Identify parts of the plan with potential to cause delay, as well as any outside factors that could make task completion longer than necessary.
 	\item Advise on course of action in the event of a delay occurring.
 \end {itemize}	
-\newpage
+\clearpage
 \section{GANTT CHART}
 \begin{center}
-\includegraphics[width = 15cm, height = 26cm]{Ganttchart}
+\includegraphics[width = 17cm, height = 23cm]{Ganttchart}
 \end{center}
 \newpage
 \section{RISK ANALYSIS}
-\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{4cm} | p{4cm} |  }
+\begin{longtable}{ | p{3cm} | p{2cm} | p{2cm} | p{4cm} | p{4cm} |  }
   \hline
   \textbf{Risk} & \textbf{Probability of Risk 0-10} & \textbf{Risk Severity 0-10} & \textbf{Risk Description} & \textbf{Prevention Procedures} \\ \hline
 Illness to member(s) of group & 5 & 3 & One or more members of the group are absent & Agile workload distribution, roles can be reallocated \\ \hline
-Members not uploading to GitHub & 5 & 8 & A group member fails to upload their work to GitHub & Disciplinary action enforced by project leader \\ \hline
+Members not uploading to GitHub & 5 & 6 & A group member fails to upload their work to GitHub & Disciplinary action enforced by project leader \\ \hline
 Unit testing not adequate & 4 & 9 & Testing falls below specifications & Enforce a testing team with multiple members with a wide skill range \\ \hline
 Failure to understand brief requirements & 5 & 5 & Member of the group does not understand specific requirements & Have project leader seek clarification from superiors \\ \hline
-University network malfunctioning & 2 & 7 & The university network is not working & Ensure group members have a backup of work they are currently working on \\ \hline
-Members go over 80 hour limit & 5 & 10 & Group member goes over the allowed 80 hour limit & Reallocate work to different members of the group with less work time \\ \hline
-Skill levels are not adequate & 5 & 6 & Members of the group have a low level of skill in specific areas& Assign group members tasks according to their strengths \\ \hline
-Members mis-understanding what is asked of them & 4 & 7 & Some members of the group may not understand what they have been assigned to do &  Have meeting minutes uploaded as soon as possible in clear detail\\
-  \hline
-\end{tabular}  
+University network malfunctioning & 2 & 9 & The university network is not working & Ensure group members have a backup of work they are currently working on \\ \hline
+Members go over 80 hour limit & 5 & 8 & Group member goes over the allowed 80 hour limit & Reallocate work to different members of the group with less work time \\ \hline
+Skill levels are not adequate & 5 & 6 & Members of the group have a low level of skill in specific areas
+& Assign group members tasks according to their strengths \\ \hline
+Members mis-understanding what is asked of them & 4 & 7 & Some members of the group may not understand what they have been assigned to do &  Have meeting minutes uploaded as soon as possible in clear detail\\ \hline
+Internal conflict within group & 4 & 6 & Group members have a major disagreement causing a decline in work productivity & Aim to provide a comfortable work environment where moral is high and everyone agrees on what must be achieved.\\ \hline
+Functional requirement of TaskerCLI not attainable & 4 & 9 & As a team we fail to fully implement a functional requirement of TaskerCLI as required\cite{se.qa.rs}. & Discuss the possibility of partial implementation with a project manager. \\ \hline
+Functional requirement of TaskerMAN not attainable & 4 & 9 & As a team we fail to fully implement a functional requirement of TaskerMAN as required\cite{se.qa.rs}. & Discuss the possibility of partial implementation with a project manager. \\ \hline
+TaskerCLI/ TaskerMAN interface is not user-friendly & 3 & 8 & The interfaces of the TaskerCLI/ TaskerMAN systems are overly complex and not easy to use for non-developers of the software. & Get non-developers to complete a list of specified tasks on the software without any major difficulty. \\ \hline
+\end{longtable}  
 \addcontentsline{toc}{section}{REFERENCES}
 \begin{thebibliography}{5}
 \bibitem{se.qa.03} \emph{Software Engineering Group Projects}
 General Documentation Standards.
 C. J. Price, N. W. Hardy, B.P. Tiddeman SE.QA.03. 1.8 Release.
+\bibitem{se.qa.rs} \emph{Software Engineering Group Projects}
+Requirements Specifications.
+N. W. Hardy, SE.QA.RS. 1.1 Release.
 \end{thebibliography}
 \addcontentsline{toc}{section}{DOCUMENT HISTORY}
 \section*{DOCUMENT HISTORY}
@@ -61,9 +69,11 @@ C. J. Price, N. W. Hardy, B.P. Tiddeman SE.QA.03. 1.8 Release.
 \hline
 Version & CCF No. & Date & Changes made to Document & Changed by \\
 \hline
+1.0 & N/A & 2015-10-22 & Initial creation & Luke Jones\\
+\hline
 1.1 & N/A & 2015-20-11 & Updated Risk Analysis and Gantt Chart & Luke Jones\\
 \hline
-1.0 & N/A & 2015-10-22 & Initial creation & Luke Jones\\
+1.2 & N/A & 2016-02-14 & Updated Risk Analysis and Gantt Chart & Luke Jones\\
 \hline
 \end{tabular}
 \label{thelastpage}
@@ -71,21 +81,3 @@ Version & CCF No. & Date & Changes made to Document & Changed by \\
 \end{verbatim}
 \label{fig:footer}
 \end{figure}
-\clearpage
-\addcontentsline{toc}{section}{REFERENCES}
-\begin{thebibliography}{5}
-\bibitem{se.qa.03} \emph{Software Engineering Group Projects}
-Project Plan Specification Standards.
-B. P. Tiddeman, N. Hardy, SE.QA.05b. 1.3.
-\end{thebibliography}
-\addcontentsline{toc}{section}{DOCUMENT HISTORY}
-\section*{DOCUMENT HISTORY}
-\begin{tabular}{|l | l | l | l | l |}
-\hline
-Version & CCF No. & Date & Changes made to Document & Changed by \\
-\hline
-1.0 & N/A & 2015-10-22 & Initial creation & Luke Jones \\
-\hline
-\end{tabular}
-\label{thelastpage}
-\end{document}
