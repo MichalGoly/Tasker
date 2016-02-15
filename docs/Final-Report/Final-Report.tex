@@ -287,19 +287,20 @@ CLI-014 & T. Mills & Fail & Could not log in, could not sync after 5 minutes. \\
 
 \section{PROJECT MAINTENANCE MANUAL}
 \subsection{Program description}
-Tasker is a ...
+TaskerMAN is the website application for Tasker. Users are able to maintain a session on the site as PHP authentication is a feature. Users are able to create both task data and team member data, which is stored in TaskerSRV. Users are also able to edit both task and team member data, as changes are written to TaskerSRV.
 
+TaskerCLI is the Java application for Tasker. Users login with their email and password as set on TaskerMAN. They're then able to view the tasks which have been allocated to them, which are listed in order of their `taskid' which is a unique attribute given to every task in TaskerSRV upon task creation. Clicking on a task displays elements associated with the task which are displayed in the order they were produced on TaskerMAN. Comments can be made on task elements, which upon synchronisation will write the comment to TaskerSRV.
 \subsection{Program structure}
-Information is contained within Design Specification\cite{se.qa.ds}.
+Information is contained within the Design Specification\cite{se.qa.ds}.
 
 \subsection{Algorithms}
-Information is contained within Design Specification\cite{se.qa.ds}.
+Information is contained within the Design Specification\cite{se.qa.ds}.
 
 \subsection{The main data areas}
-Information is contained within Design Specification\cite{se.qa.ds}.
+Information is contained within the Design Specification\cite{se.qa.ds}.
 
 \subsection{Files}
-Reference design spec (local SQLite db file for storage)
+Information is contained within the Design Specification\cite{se.qa.ds} A local SQLite database will be required for storage.
 
 \subsection{Suggestions for improvements}
 \begin{itemize}
@@ -331,7 +332,7 @@ Reference design spec (local SQLite db file for storage)
     special characters like apostrophes. This prevents SQL injections, but has an impact
     on the usability of the system. A more sophisticated approach to preventing SQL injections
     and XSS attacks could be implemented.
-  \item It's currently not possible to add a task in TaskerMAN with the same name as anoher pre-existing task due to the task title being a unique attribute in TaskerSRV.
+  \item It's currently not possible to add a task in TaskerMAN with the same name as another pre-existing task due to the task title being a unique attribute in TaskerSRV.
   \item Finally README with the instructions to install TaskerMAN could be updated with
     the information about the necessary change of permissions in order for the system
     to work. TaskerCLI installation script should also be moved from the src folder 
@@ -364,7 +365,9 @@ login and use its data to populate the view. Things however become quickly more 
 you consider all the possible scenarios like lack of the Internet connection and the precedence
 of different information about the team member (e.g. task list on the remote database takes
 precedence over the local version, but comments to any existing tasks have to be taken
-from the local one). 
+from the local one).
+
+From a TaskerMAN perspective there exist many variables that span across several .php files e.g. the variable \$Username is present on every page (except for login.php) as it's echoed on the top menu bar of every page. If you were to alter this variable where it's initialised in login.php, then you would have to alter it across all the pages. Developers must also be wary of editing the connector.php file. Since this file is responsible for accessing the TaskerSRV changing the database login credentials will mean that none of the data present in TaskerSRV will be displayed. This may be desirable if you have a different database you'd rather connect to, however the new database would have to have exactly the same tables and table names as the ones present in TaskerSRV.
 \subsection{Physical limitations of the program}
 Tasker system requirements:
 \begin{itemize}
