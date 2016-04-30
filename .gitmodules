@@ -1,3 +1,4 @@
 [submodule "src/TaskerCLI"]
 	path = src/TaskerCLI
 	url = https://github.com/MichalGoly/TaskerCLI
+	branch = master
