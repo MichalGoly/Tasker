@@ -1,9 +1,9 @@
 <?php
 //database log in details
-$servername = "db.dcs.aber.ac.uk:3306";
-$username = "csgpadm_12";
-$password = "RCORoND6";
-$database = "csgp_12_15_16";
+$servername = "db.mysql.co.uk:3306";
+$username = "username";
+$password = "password";
+$database = "database_name";
 //Create connection
 
 $connection =  new mysqli($servername, $username, $password,$database );

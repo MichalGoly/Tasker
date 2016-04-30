@@ -2,10 +2,11 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
- define('DB_SERVER', 'db.dcs.aber.ac.uk:3306');
-define('DB_USERNAME', 'csgpadm_12');
-define('DB_PASSWORD', 'RCORoND6');
-define('DB_DATABASE', 'csgp_12_15_16');
+// fill these with actual credentials
+define('DB_SERVER', 'db.mysql.co.uk:3306');
+define('DB_USERNAME', 'username');
+define('DB_PASSWORD', 'password');
+define('DB_DATABASE', 'database_name');
 
 $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
